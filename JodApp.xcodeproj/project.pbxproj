@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F21B46E96F00AB519D /* AppDelegate.swift */; };
+		3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */; };
+		3F4203F81B46E96F00AB519D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F71B46E96F00AB519D /* ViewController.swift */; };
+		3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203F91B46E96F00AB519D /* Main.storyboard */; };
+		3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FC1B46E96F00AB519D /* Images.xcassets */; };
+		3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */; };
+		3F42040C1B46E96F00AB519D /* JodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42040B1B46E96F00AB519D /* JodAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F4204061B46E96F00AB519D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F4203E51B46E96F00AB519D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F4203EC1B46E96F00AB519D;
+			remoteInfo = JodApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F4203F51B46E96F00AB519D /* JodApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JodApp.xcdatamodel; sourceTree = "<group>"; };
+		3F4203F71B46E96F00AB519D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F4203FA1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F4203FC1B46E96F00AB519D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F4203FF1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3F4204051B46E96F00AB519D /* JodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F42040A1B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F42040B1B46E96F00AB519D /* JodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodAppTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F4203EA1B46E96F00AB519D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4204021B46E96F00AB519D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F4203E41B46E96F00AB519D = {
+			isa = PBXGroup;
+			children = (
+				3F4203EF1B46E96F00AB519D /* JodApp */,
+				3F4204081B46E96F00AB519D /* JodAppTests */,
+				3F4203EE1B46E96F00AB519D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F4203EE1B46E96F00AB519D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F4203ED1B46E96F00AB519D /* JodApp.app */,
+				3F4204051B46E96F00AB519D /* JodAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F4203EF1B46E96F00AB519D /* JodApp */ = {
+			isa = PBXGroup;
+			children = (
+				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
+				3F4203F71B46E96F00AB519D /* ViewController.swift */,
+				3F4203F91B46E96F00AB519D /* Main.storyboard */,
+				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
+				3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */,
+				3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */,
+				3F4203F01B46E96F00AB519D /* Supporting Files */,
+			);
+			path = JodApp;
+			sourceTree = "<group>";
+		};
+		3F4203F01B46E96F00AB519D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F4203F11B46E96F00AB519D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F4204081B46E96F00AB519D /* JodAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F42040B1B46E96F00AB519D /* JodAppTests.swift */,
+				3F4204091B46E96F00AB519D /* Supporting Files */,
+			);
+			path = JodAppTests;
+			sourceTree = "<group>";
+		};
+		3F4204091B46E96F00AB519D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F42040A1B46E96F00AB519D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F4203EC1B46E96F00AB519D /* JodApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F42040F1B46E96F00AB519D /* Build configuration list for PBXNativeTarget "JodApp" */;
+			buildPhases = (
+				3F4203E91B46E96F00AB519D /* Sources */,
+				3F4203EA1B46E96F00AB519D /* Frameworks */,
+				3F4203EB1B46E96F00AB519D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JodApp;
+			productName = JodApp;
+			productReference = 3F4203ED1B46E96F00AB519D /* JodApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F4204041B46E96F00AB519D /* JodAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F4204121B46E96F00AB519D /* Build configuration list for PBXNativeTarget "JodAppTests" */;
+			buildPhases = (
+				3F4204011B46E96F00AB519D /* Sources */,
+				3F4204021B46E96F00AB519D /* Frameworks */,
+				3F4204031B46E96F00AB519D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F4204071B46E96F00AB519D /* PBXTargetDependency */,
+			);
+			name = JodAppTests;
+			productName = JodAppTests;
+			productReference = 3F4204051B46E96F00AB519D /* JodAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F4203E51B46E96F00AB519D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Lucas Coiado Mota";
+				TargetAttributes = {
+					3F4203EC1B46E96F00AB519D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3F4204041B46E96F00AB519D = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 3F4203EC1B46E96F00AB519D;
+					};
+				};
+			};
+			buildConfigurationList = 3F4203E81B46E96F00AB519D /* Build configuration list for PBXProject "JodApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F4203E41B46E96F00AB519D;
+			productRefGroup = 3F4203EE1B46E96F00AB519D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F4203EC1B46E96F00AB519D /* JodApp */,
+				3F4204041B46E96F00AB519D /* JodAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F4203EB1B46E96F00AB519D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */,
+				3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */,
+				3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4204031B46E96F00AB519D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F4203E91B46E96F00AB519D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4203F81B46E96F00AB519D /* ViewController.swift in Sources */,
+				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
+				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4204011B46E96F00AB519D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F42040C1B46E96F00AB519D /* JodAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F4204071B46E96F00AB519D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F4203EC1B46E96F00AB519D /* JodApp */;
+			targetProxy = 3F4204061B46E96F00AB519D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F4203F91B46E96F00AB519D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4203FA1B46E96F00AB519D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4203FF1B46E96F00AB519D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F42040D1B46E96F00AB519D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F42040E1B46E96F00AB519D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F4204101B46E96F00AB519D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JodApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3F4204111B46E96F00AB519D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JodApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3F4204131B46E96F00AB519D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JodAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JodApp.app/JodApp";
+			};
+			name = Debug;
+		};
+		3F4204141B46E96F00AB519D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JodAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JodApp.app/JodApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F4203E81B46E96F00AB519D /* Build configuration list for PBXProject "JodApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F42040D1B46E96F00AB519D /* Debug */,
+				3F42040E1B46E96F00AB519D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F42040F1B46E96F00AB519D /* Build configuration list for PBXNativeTarget "JodApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4204101B46E96F00AB519D /* Debug */,
+				3F4204111B46E96F00AB519D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F4204121B46E96F00AB519D /* Build configuration list for PBXNativeTarget "JodAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4204131B46E96F00AB519D /* Debug */,
+				3F4204141B46E96F00AB519D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F4203F51B46E96F00AB519D /* JodApp.xcdatamodel */,
+			);
+			currentVersion = 3F4203F51B46E96F00AB519D /* JodApp.xcdatamodel */;
+			path = JodApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3F4203E51B46E96F00AB519D /* Project object */;
+}
