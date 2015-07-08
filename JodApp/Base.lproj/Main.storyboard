@@ -20,6 +20,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="324" y="273"/>
         </scene>
         <!--Chronometer View Controller-->
         <scene sceneID="jCp-8S-Vek">
@@ -112,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hca-1f-Q0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="233"/>
+            <point key="canvasLocation" x="1068" y="697"/>
         </scene>
     </scenes>
 </document>
