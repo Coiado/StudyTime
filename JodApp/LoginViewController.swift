@@ -10,102 +10,103 @@ import UIKit
 import Parse
 import ParseUI
 
-class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate {
+class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate
+{
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var cadastroLabel: UILabel!
     
-    var logInViewController: PFLogInViewController = PFLogInViewController()
-    var signInViewController: PFSignUpViewController = PFSignUpViewController()
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
+    
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 150, 150)) as UIActivityIndicatorView
     
     override func viewDidLoad() {
-        [super.viewDidLoad()]
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        [super.viewDidAppear(animated)]
-        if(PFUser.currentUser() == nil){
-            
-            self.logInViewController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.SignUpButton | PFLogInFields.PasswordForgotten
-            
-            var logoTitle = UILabel()
-            logoTitle.text = "JodiApp"
-            
-            self.logInViewController.logInView!.logo = logoTitle
-            
-            
-            self.logInViewController.delegate = self
-            
-            
-            self.signInViewController.signUpView!.logo = logoTitle
-            
-            self.signInViewController.delegate = self
-            
-            self.presentViewController(self.logInViewController, animated: false, completion: nil)
-        }
+        super.viewDidLoad()
+        
+        setLabel()
+        setTextField()
+        setButton()
+        
+        self.actInd.center = self.view.center
+        self.actInd.hidesWhenStopped = true
+        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(self.actInd)
         
     }
     
-    
-    
-    
-    // MARK: Parse log in
-    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
-        
-        
-        if (!username.isEmpty || !password.isEmpty) {
-            return true
-        }else {
-            var alert = UIAlertView(title: "Invalid", message: "Username and password must be complete", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            return false
-        }
-        
-    }
-    
-    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        
-        performSegueWithIdentifier("student", sender: self)
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-        
-    }
-    
-    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?)
+    func setLabel()
     {
-        
-        var alert = UIAlertView(title: "Invalid", message: "Fail to log in", delegate: self, cancelButtonTitle: "OK")
-        alert.show()
-        
+        loginLabel.text = "Entrar"
+        cadastroLabel.text = "Não é cadastrado?"
     }
     
-    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
-        
-    }
-    
-    
-    
-    // MARK : Parse Sign in
-    
-    
-    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        
-        var alert = UIAlertView(title: "Sucessful", message: "Your account was sucessful create", delegate: self, cancelButtonTitle: "OK")
-        alert.show()
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
-    
-    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        
-        println("FAiled to sign up...")
-        
+    func setButton()
+    {
+        loginButton.setTitle("Entrar", forState: .Normal)
+        signInButton.setTitle("Cadastre-se", forState: .Normal)
     }
     
     
-    
-    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        
-        println("User dismissed sign up.")
+    func setTextField()
+    {
+        loginTextField.placeholder = "Usuário"
+        passwordTextField.placeholder = "Senha"
         
     }
+    
+    @IBAction func loginAction(sender: AnyObject) {
+        
+        var username: String = loginTextField.text
+        var password: String = passwordTextField.text
+        
+        self.actInd.startAnimating()
+        
+        if (count(username) < 6 || count(password) < 6)
+        {
+            var alert = UIAlertView(title: "Login falhou", message: "Usuário e senha devem ter mais de 6", delegate: self, cancelButtonTitle: "Ok")
+                alert.show()
+            self.actInd.stopAnimating()
+        }
+        else
+        {
+            PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
+            
+            self.actInd.stopAnimating()
+            
+            if ((user) != nil) {
+                
+                var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+            }else {
+                
+                var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+            }
+            
+        })
+        
+        }
+        
+    }
+    
+    @IBAction func signInAction(sender: AnyObject) {
+        
+        performSegueWithIdentifier("signup", sender: self)
+        
+        
+    }
+    
+    
     
 }
+
+
+
+
+
 

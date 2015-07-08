@@ -33,6 +33,7 @@
 		3FE70C191B4D498C00BFD1DC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C121B4D48FD00BFD1DC /* ParseCrashReporting.framework */; };
 		3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */; };
 		3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */; };
+		5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F226F711B4D6BFA0063B326 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
+				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
 				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
 				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
@@ -302,6 +305,7 @@
 				3FE70C0E1B4D487E00BFD1DC /* LoginViewController.swift in Sources */,
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
+				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
