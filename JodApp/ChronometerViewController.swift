@@ -80,6 +80,7 @@ class ChronometerViewController: UIViewController {
         }
     }
     
+
     
     
     @IBAction func study(sender: AnyObject) {
@@ -89,6 +90,7 @@ class ChronometerViewController: UIViewController {
             self.startTime = NSDate.timeIntervalSinceReferenceDate()
         }
     }
+    
     
     @IBAction func pause(sender: AnyObject) {
         timer.invalidate()
