@@ -11,6 +11,7 @@ import Charts
 
 class MateriaTeste1ViewController: UIViewController {
     
+ //   public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate <- Ver!
     
     @IBOutlet weak var currentLineChartView: LineChartView!
     @IBOutlet weak var pastLineChartView: LineChartView!
@@ -47,6 +48,9 @@ class MateriaTeste1ViewController: UIViewController {
         //        self.pastLineChartView.data?.getYMax(axis: ChartYAxis.AxisDependency) // Provavelmente, a view da pagina é um let... Mesmo assim não faz muito sentido
         
         basePositionForAnimation = pastLineChartView.frame // retem a posicao inicial para a qual se deve voltar.
+        
+//        pastLineChartView.borderLineWidth = 3.0
+//        pastLineChartView.borderColor = UIColor.blueColor()
         
     }
     
