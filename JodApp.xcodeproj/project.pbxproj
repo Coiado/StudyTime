@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08BE0C071B540779006BB2DC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; };
+		08BE0C081B540779006BB2DC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */; };
+		08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C0F1B542138006BB2DC /* setaDir.jpg */; };
+		08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C101B542138006BB2DC /* setaEsq.jpg */; };
 		3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F21B46E96F00AB519D /* AppDelegate.swift */; };
 		3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */; };
 		3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */; };
@@ -37,6 +42,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		08BE0C051B540696006BB2DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08BE0C011B540696006BB2DC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		08BE0C091B540779006BB2DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08BE0C011B540696006BB2DC /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
 		3F4204061B46E96F00AB519D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F4203E51B46E96F00AB519D /* Project object */;
@@ -46,7 +65,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		08BE0C0B1B540779006BB2DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				08BE0C081B540779006BB2DC /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		08BE0C011B540696006BB2DC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
+		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
+		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
+		08BE0C101B542138006BB2DC /* setaEsq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaEsq.jpg; sourceTree = "<group>"; };
 		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +126,7 @@
 				3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */,
 				3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */,
 				3FE70C171B4D494E00BFD1DC /* Parse.framework in Frameworks */,
+				08BE0C071B540779006BB2DC /* Charts.framework in Frameworks */,
 				3FE70C181B4D494E00BFD1DC /* ParseUI.framework in Frameworks */,
 				3FE70C161B4D492E00BFD1DC /* Bolts.framework in Frameworks */,
 				3FE70C0C1B4D478F00BFD1DC /* Social.framework in Frameworks */,
@@ -116,6 +154,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08BE0C021B540696006BB2DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08BE0C061B540696006BB2DC /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08BE0C131B542141006BB2DC /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				08BE0C101B542138006BB2DC /* setaEsq.jpg */,
+				08BE0C0F1B542138006BB2DC /* setaDir.jpg */,
+			);
+			name = Imagens;
+			sourceTree = "<group>";
+		};
 		3F4203E41B46E96F00AB519D = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +209,7 @@
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
 				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
 				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
+				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
 				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
 				3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */,
@@ -166,6 +222,8 @@
 		3F4203F01B46E96F00AB519D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08BE0C131B542141006BB2DC /* Imagens */,
+				08BE0C011B540696006BB2DC /* Charts.xcodeproj */,
 				3F4203F11B46E96F00AB519D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,10 +270,12 @@
 				3F4203E91B46E96F00AB519D /* Sources */,
 				3F4203EA1B46E96F00AB519D /* Frameworks */,
 				3F4203EB1B46E96F00AB519D /* Resources */,
+				08BE0C0B1B540779006BB2DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				08BE0C0A1B540779006BB2DC /* PBXTargetDependency */,
 			);
 			name = JodApp;
 			productName = JodApp;
@@ -269,6 +329,12 @@
 			mainGroup = 3F4203E41B46E96F00AB519D;
 			productRefGroup = 3F4203EE1B46E96F00AB519D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 08BE0C021B540696006BB2DC /* Products */;
+					ProjectRef = 08BE0C011B540696006BB2DC /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3F4203EC1B46E96F00AB519D /* JodApp */,
@@ -277,13 +343,25 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		08BE0C061B540696006BB2DC /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 08BE0C051B540696006BB2DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		3F4203EB1B46E96F00AB519D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */,
 				3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */,
 				3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */,
+				08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */,
 				3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */,
 				3FE70C0E1B4D487E00BFD1DC /* LoginViewController.swift in Sources */,
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
@@ -321,6 +400,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		08BE0C0A1B540779006BB2DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 08BE0C091B540779006BB2DC /* PBXContainerItemProxy */;
+		};
 		3F4204071B46E96F00AB519D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3F4203EC1B46E96F00AB519D /* JodApp */;
@@ -438,6 +522,7 @@
 					"$(PROJECT_DIR)/JodApp/parse-library-1",
 				);
 				INFOPLIST_FILE = JodApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -452,6 +537,7 @@
 					"$(PROJECT_DIR)/JodApp/parse-library-1",
 				);
 				INFOPLIST_FILE = JodApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
