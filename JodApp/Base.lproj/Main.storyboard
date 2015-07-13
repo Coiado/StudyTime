@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qoR-KC-A4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BNY-R7-pbb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -75,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="211"/>
+            <point key="canvasLocation" x="-606" y="-593"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="aT5-Wa-VYO">
@@ -138,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV9-9a-i9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-509"/>
+            <point key="canvasLocation" x="150" y="-593"/>
         </scene>
         <!--Chronometer View Controller-->
         <scene sceneID="jCp-8S-Vek">
@@ -228,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hca-1f-Q0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="921"/>
+            <point key="canvasLocation" x="64" y="217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KoN-7B-ODC">
@@ -248,5 +249,116 @@
             </objects>
             <point key="canvasLocation" x="-606" y="217"/>
         </scene>
+        <!--MatériasDoAluno View Controller-->
+        <scene sceneID="pmO-wD-KA0">
+            <objects>
+                <tableViewController id="McF-xa-82w" userLabel="MatériasDoAluno View Controller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RmF-fT-tEy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OnL-UU-Da3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OnL-UU-Da3" id="EPq-Tu-Tnk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matéria Teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBG-iq-zeB">
+                                            <rect key="frame" x="15" y="11" width="103" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BNY-R7-pbb" kind="show" id="S8f-B9-ke3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="McF-xa-82w" id="rD7-hT-KEz"/>
+                            <outlet property="delegate" destination="McF-xa-82w" id="vhn-7c-mzx"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gi8-4k-Dby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606" y="896"/>
+        </scene>
+        <!--MatériaTeste1 View Controller-->
+        <scene sceneID="Swl-Ft-HKa">
+            <objects>
+                <viewController id="BNY-R7-pbb" userLabel="MatériaTeste1 View Controller" customClass="MateriaTeste1ViewController" customModule="JodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yZY-kA-00D"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZLj-12-3qk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZRF-tL-hb6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEe-sP-J8X" userLabel="Current Chart" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="50" y="20" width="500" height="266"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-Ha-gkK" userLabel="Past Chart" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="50" y="314" width="500" height="266"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-cx-1gJ" userLabel="Backwards">
+                                <rect key="frame" x="0.0" y="433" width="38" height="49"/>
+                                <state key="normal" image="setaEsq.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="BNY-R7-pbb" eventType="touchUpInside" id="txH-mc-ngc"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-l8-YpY" userLabel="Forwards">
+                                <rect key="frame" x="562" y="433" width="38" height="49"/>
+                                <state key="normal" image="setaDir.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="BNY-R7-pbb" eventType="touchUpInside" id="cbd-ge-Tir"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VhS-Ha-gkK" secondAttribute="trailing" constant="34" id="0i4-vZ-uA8"/>
+                            <constraint firstItem="VhS-Ha-gkK" firstAttribute="top" secondItem="bEe-sP-J8X" secondAttribute="bottom" constant="28" id="2gJ-oi-AdN"/>
+                            <constraint firstItem="Hj6-cx-1gJ" firstAttribute="top" secondItem="yZY-kA-00D" secondAttribute="bottom" constant="413" id="5UI-R0-FBv"/>
+                            <constraint firstItem="bEe-sP-J8X" firstAttribute="leading" secondItem="ZRF-tL-hb6" secondAttribute="leadingMargin" constant="34" id="AP1-8V-PQd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kPK-l8-YpY" secondAttribute="trailing" constant="-16" id="BRQ-Ma-o6H"/>
+                            <constraint firstItem="kPK-l8-YpY" firstAttribute="top" secondItem="yZY-kA-00D" secondAttribute="bottom" constant="413" id="FIk-VZ-aKP"/>
+                            <constraint firstItem="bEe-sP-J8X" firstAttribute="top" secondItem="ZRF-tL-hb6" secondAttribute="topMargin" constant="20" id="Vq6-Nl-IFw"/>
+                            <constraint firstItem="VhS-Ha-gkK" firstAttribute="leading" secondItem="ZRF-tL-hb6" secondAttribute="leadingMargin" constant="34" id="ZFi-nc-csW"/>
+                            <constraint firstItem="ZLj-12-3qk" firstAttribute="top" secondItem="bEe-sP-J8X" secondAttribute="bottom" constant="314" id="Zl7-UM-koo"/>
+                            <constraint firstItem="ZLj-12-3qk" firstAttribute="top" secondItem="kPK-l8-YpY" secondAttribute="bottom" constant="118" id="ixy-gc-of1"/>
+                            <constraint firstItem="ZLj-12-3qk" firstAttribute="top" secondItem="Hj6-cx-1gJ" secondAttribute="bottom" constant="118" id="jO4-25-puB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bEe-sP-J8X" secondAttribute="trailing" constant="34" id="nwv-6C-2vk"/>
+                            <constraint firstItem="Hj6-cx-1gJ" firstAttribute="leading" secondItem="ZRF-tL-hb6" secondAttribute="leadingMargin" constant="-16" id="rPz-DP-ITZ"/>
+                            <constraint firstItem="kPK-l8-YpY" firstAttribute="leading" secondItem="VhS-Ha-gkK" secondAttribute="trailing" constant="12" id="sJN-oi-sGa"/>
+                            <constraint firstItem="ZLj-12-3qk" firstAttribute="top" secondItem="VhS-Ha-gkK" secondAttribute="bottom" constant="20" id="udT-bu-BCu"/>
+                            <constraint firstItem="VhS-Ha-gkK" firstAttribute="leading" secondItem="Hj6-cx-1gJ" secondAttribute="trailing" constant="12" id="zbK-Xx-9Nl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentLineChartView" destination="bEe-sP-J8X" id="3r0-NI-1zD"/>
+                        <outlet property="leftButton" destination="Hj6-cx-1gJ" id="qLb-tE-68a"/>
+                        <outlet property="pastLineChartView" destination="VhS-Ha-gkK" id="g8v-3n-aMD"/>
+                        <outlet property="rightButton" destination="kPK-l8-YpY" id="Xet-wm-FX5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6u-Ki-J1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606" y="1587"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="setaDir.jpg" width="46" height="46"/>
+        <image name="setaEsq.jpg" width="49" height="46"/>
+    </resources>
 </document>
