@@ -39,21 +39,30 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     func setLabel()
     {
-        loginLabel.text = "Entrar"
-        cadastroLabel.text = "Não é cadastrado?"
+        let loginString = NSLocalizedString("Entrar", comment: "label superior login")
+        let cadastroString = NSLocalizedString("Não é cadastrado?", comment: "label para mostrar o cadastro")
+        
+        loginLabel.text = loginString
+        cadastroLabel.text = cadastroString
     }
     
     func setButton()
     {
-        loginButton.setTitle("Entrar", forState: .Normal)
-        signInButton.setTitle("Cadastre-se", forState: .Normal)
+        let loginButtonString = NSLocalizedString("Entrar", comment: "botao de login")
+        let signinButtonString = NSLocalizedString("Cadastre-se", comment: "botao de cadastro")
+        
+        loginButton.setTitle(loginButtonString, forState: .Normal)
+        signInButton.setTitle(signinButtonString, forState: .Normal)
     }
     
     
     func setTextField()
     {
-        loginTextField.placeholder = "Usuário"
-        passwordTextField.placeholder = "Senha"
+        let loginTextString  = NSLocalizedString("Usuário", comment: "text field de usuario")
+        let passwordTextString  = NSLocalizedString("Senha", comment: "text field de senha")
+        
+        loginTextField.placeholder = loginTextString
+        passwordTextField.placeholder = passwordTextString
         
     }
     
@@ -66,7 +75,11 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         
         if (count(username) < 6 || count(password) < 6)
         {
-            var alert = UIAlertView(title: "Login falhou", message: "Usuário e senha devem ter mais de 6", delegate: self, cancelButtonTitle: "Ok")
+            
+            let loginTitleString = NSLocalizedString("Login falhou", comment: "titulo da mensagem de erro")
+            let loginMessageString = NSLocalizedString("Usuário e senha devem ter mais de 6", comment: "mensagem de erro ")
+            
+            var alert = UIAlertView(title: loginTitleString, message: loginMessageString, delegate: self, cancelButtonTitle: "Ok")
                 alert.show()
             self.actInd.stopAnimating()
         }
@@ -77,11 +90,14 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
             self.actInd.stopAnimating()
             
             if ((user) != nil) {
-                
+                                
                 var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
+            
                 
             }else {
+                
+                let errorString = NSLocalizedString("Erro", comment: "titulo da mensagem de erro")
                 
                 var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 alert.show()

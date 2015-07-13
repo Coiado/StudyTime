@@ -28,7 +28,9 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setLabel()
+        setTextField()
+        setButton()
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
@@ -40,21 +42,30 @@ class SignInViewController: UIViewController {
     
     func setLabel()
     {
-        signupLabel.text = "Cadastre-se"
+        let signupString = NSLocalizedString("Cadastre-se", comment: "label de cadastro")
+        
+        signupLabel.text = signupString
     }
     
     
     func setTextField()
     {
-        loginTextField.placeholder = "Usuário"
-        passwordTextField.placeholder = "Senha"
-        confirmationTextField.placeholder = "Confirme a senha"
-        emailTextField.placeholder = "E-mail"
+        let loginTextFieldString = NSLocalizedString("Usuário", comment: "text field de usuario")
+        let passwordTextFieldString = NSLocalizedString("Senha", comment: "text fiedl da senha")
+        let confirmationTextFieldString = NSLocalizedString("Confirme a senha", comment: "text field da confirmacao da senah")
+        let emailTextFieldString = NSLocalizedString("E-mail", comment: "text field do email")
+        
+        loginTextField.placeholder = loginTextFieldString
+        passwordTextField.placeholder = passwordTextFieldString
+        confirmationTextField.placeholder = confirmationTextFieldString
+        emailTextField.placeholder = emailTextFieldString
     }
 
     func setButton()
     {
-        signupButton.setTitle("Cadastrar", forState: .Normal)
+        let signupButtonString = NSLocalizedString("Cadastrar", comment: "Botao de cadastro")
+        
+        signupButton.setTitle(signupButtonString, forState: .Normal)
     }
     
     
@@ -64,32 +75,39 @@ class SignInViewController: UIViewController {
         var password = passwordTextField.text
         var confirmation = confirmationTextField.text
         var email = emailTextField.text
-       
+        let errorString = NSLocalizedString("Erro", comment: "titulo do error")
+        println("asa")
+        
         actInd.startAnimating()
         
         if (password != confirmation)
         {
-            var alert = UIAlertView(title: "Error", message: "A senha não é a mesma", delegate: self, cancelButtonTitle: "Ok")
+            let passwordErrorString = NSLocalizedString("A senha não é a mesma", comment: "erro de quando a senha nao é a mesma")
+            
+            var alert = UIAlertView(title: errorString, message: passwordErrorString, delegate: self, cancelButtonTitle: "Ok")
             alert.show()
             actInd.stopAnimating()
         }
         
         else if(count(username) < 6 || count(password) < 6 )
         {
-            var alert = UIAlertView(title: "Error", message: "Usuário e senha devem ter pelo menos 6 caracteres", delegate: self, cancelButtonTitle: "Ok")
+            let usernameErrorString = NSLocalizedString("Usuário e senha devem ter pelo menos 6 caracteres", comment: "mensagem de erro")
+            
+            var alert = UIAlertView(title: errorString , message: usernameErrorString, delegate: self, cancelButtonTitle: "Ok")
             alert.show()
             actInd.stopAnimating()
         }
             
         else if(count(email) < 1)
         {
-            var alert = UIAlertView(title: "Error", message: "Por favor entre com um e-mail", delegate: self, cancelButtonTitle: "Ok")
+            let emailErrorString = NSLocalizedString("Por favor entre com um e-mail", comment: "error de email")
+            
+            var alert = UIAlertView(title: errorString, message: emailErrorString, delegate: self, cancelButtonTitle: "Ok")
             alert.show()
             actInd.stopAnimating()
         }
         
         else {
-            
             var newUser = PFUser()
             newUser.username = username
             newUser.password = password
@@ -104,10 +122,13 @@ class SignInViewController: UIViewController {
                 }
                 else
                 {
-                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "Ok")
+                    
+                    var alert = UIAlertView(title: errorString, message: "\(error)", delegate: self, cancelButtonTitle: "Ok")
+                    alert.show()
                 }
                 
             })
+            actInd.stopAnimating()
         }
     }
     
