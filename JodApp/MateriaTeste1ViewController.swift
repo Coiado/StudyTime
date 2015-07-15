@@ -4,7 +4,6 @@
 //
 //  Created by Ogari Pata Pacheco on 13/07/15.
 //  Copyright (c) 2015 Lucas Coiado Mota. All rights reserved.
-//
 
 import UIKit
 import Charts
@@ -57,6 +56,9 @@ class MateriaTeste1ViewController: UIViewController {
         
     }
     
+    // MARK: - Desenho e plotagem
+    
+    // Método que define os dados de cada gráfico (os plota e desenha)
     func setChart(dataPoints: [String], currentValues: [Double], pastValues: [Double]) {
         
         var currentDataEntries: [ChartDataEntry] = []
@@ -88,6 +90,8 @@ class MateriaTeste1ViewController: UIViewController {
         
     }
     
+    // MARK: - Metodos auxiliares para a exibição dos gráficos
+    
     // Metodo que define qual gráfico possui a maior hora no eixo Y
     func highestHourComparison(week1:[Double], week2:[Double]) -> Double
     {
@@ -113,6 +117,20 @@ class MateriaTeste1ViewController: UIViewController {
         }
     }
     
+    // Criada meramente para tornar menos repetitivo e extender o código desnecessariamente. (Usado logo abaixo)
+    func auxAnimationTransition() {
+        
+        currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
+        currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
+        UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+            self.currentLineChartView.alpha = 0.0
+            }, completion: nil)
+        UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+            self.currentLineChartView.alpha = 1.0
+            }, completion: nil)
+    }
+    
+    // Metodo que define qual gráfico aparecerá abaixo
     func chartBeingShown (pastWeekChart : Int8){
         
         switch pastWeekChart
@@ -130,14 +148,8 @@ class MateriaTeste1ViewController: UIViewController {
                 
                 if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
                     
-                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
-                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 0.0
-                        }, completion: nil)
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 1.0
-                        }, completion: nil)
+                    auxAnimationTransition()
+                    
                     // Animacao de gráfico de baixo para cima.
 //                    currentLineChartView.animate(yAxisDuration: 2.0, easing: { (elapsed, duration) -> CGFloat in
 //                        var position = (self.currentLineChartView.scaleY/((CGFloat((elapsed)/duration))))
@@ -192,14 +204,8 @@ class MateriaTeste1ViewController: UIViewController {
                 
                 if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
                     
-                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
-                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 0.0
-                        }, completion: nil)
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 1.0
-                        }, completion: nil)
+                    auxAnimationTransition()
+
                 }
 //                setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
 //                
@@ -241,14 +247,7 @@ class MateriaTeste1ViewController: UIViewController {
                 
                 if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
                     
-                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
-                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 0.0
-                        }, completion: nil)
-                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
-                        self.currentLineChartView.alpha = 1.0
-                        }, completion: nil)
+                    auxAnimationTransition()
                 }
             }
                 
@@ -283,6 +282,8 @@ class MateriaTeste1ViewController: UIViewController {
         }
     }
     
+    // MARK: - Métodos de mudança de gráficos passados
+    
     @IBAction func backButton(sender: AnyObject) {
         
         if self.cont < 2
@@ -293,10 +294,10 @@ class MateriaTeste1ViewController: UIViewController {
             self.rightButton.hidden = false
             
             // Animacao
-            pastLineChartView.frame = CGRectMake(-501, 266, 501, 266)
+            pastLineChartView.frame = CGRectMake(-501, 266, 501, 266) // Precisam-se ajeitar constraints
             UIView.animateWithDuration(0.6, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.pastLineChartView.frame = self.basePositionForAnimation
-                self.pastLineChartView.layoutIfNeeded()             // Fazer com as constraints
+                self.pastLineChartView.layoutIfNeeded()
                 }, completion: nil)
             
         }
@@ -317,10 +318,10 @@ class MateriaTeste1ViewController: UIViewController {
             chartBeingShown(cont)
             self.leftButton.hidden = false
             
-            pastLineChartView.frame = CGRectMake(1067, 266, 501, 266)
+            pastLineChartView.frame = CGRectMake(1067, 266, 501, 266) // Precisam-se ajeitar constraints
             UIView.animateWithDuration(0.6, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.pastLineChartView.frame = self.basePositionForAnimation
-                self.pastLineChartView.layoutIfNeeded()             // Fazer com as constraints
+                self.pastLineChartView.layoutIfNeeded()
                 }, completion: nil)
             
         }
