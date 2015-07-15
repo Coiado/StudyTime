@@ -12,6 +12,11 @@ import Charts
 class MateriaTeste1ViewController: UIViewController {
     
  //   public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate <- Ver!
+//    public class ChartAxisBase: ChartComponentBase
+    
+//  var y  : ChartAxisBase
+//    var x  : BarLineChartViewBase
+
     
     @IBOutlet weak var currentLineChartView: LineChartView!
     @IBOutlet weak var pastLineChartView: LineChartView!
@@ -20,32 +25,30 @@ class MateriaTeste1ViewController: UIViewController {
     @IBOutlet weak var rightButton: UIButton!
     
    // var yAxis : ChartYAxis!
-    
+        
     // Onde estão todas as semanas de estudo do aluno
     let currentTimeStudied = [0.5, 3.0, 0.5, 0.0, 1.0, 1.0, 1.5] // 7.5h totais
     var pastTimeStudied1 = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0] // 4.5h totais
     var pastTimeStudied2 = [0.5, 1.5, 1.0, 0.5, 0.5, 0.0, 0.5] // 4.5h totais
-    var pastTimeStudied3 = [1.5, 1.0, 1.5, 1.0, 1.5, 0.5, 0.5] // 7.5h totais
+    var pastTimeStudied3 = [4.5, 1.0, 1.5, 1.0, 1.5, 0.5, 0.5] // 7.5h totais
     let days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"]
     
+    // Contador das "páginas" dos gráficos de semanas passadas
     var cont : Int8 = 0
+    
+    // Necessário para a animação de mudança de gráfico passado
     var basePositionForAnimation : CGRect!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+//        setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
+//        currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+//        pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
         
-        // let days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"]
-        //let currentTimeStudied = [0.5, 3.0, 0.5, 0.0, 1.0, 1.0, 1.5] // 7.5h totais
-        //  var pastTimeStudied = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0]
+        chartBeingShown(cont)
         
-        setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
-        currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
-        pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
-        
-        //        self.pastLineChartView.data?.getYMax(axis: ChartYAxis.AxisDependency) // Provavelmente, a view da pagina é um let... Mesmo assim não faz muito sentido
         
         basePositionForAnimation = pastLineChartView.frame // retem a posicao inicial para a qual se deve voltar.
         
@@ -85,21 +88,196 @@ class MateriaTeste1ViewController: UIViewController {
         
     }
     
+    // Metodo que define qual gráfico possui a maior hora no eixo Y
+    func highestHourComparison(week1:[Double], week2:[Double]) -> Double
+    {
+        var sortedArray1 = week1
+        var sortedArray2 = week2
+
+        sortedArray1.sort {return $0 < $1} // Pq aqui o negócio eh profissa!!
+        sortedArray2.sort {return $0 < $1} // Perguntar sobre shorthand arguments
+        
+        if sortedArray1.last > sortedArray2.last
+        {
+            return sortedArray1.last!
+        }
+        
+        else if sortedArray1.last < sortedArray2.last
+        {
+            return sortedArray2.last!
+        }
+        
+        else
+        {
+            return sortedArray1.last!
+        }
+    }
+    
     func chartBeingShown (pastWeekChart : Int8){
         
         switch pastWeekChart
         {
         case 1:
+            
+            // É definido qual gráfico deve ter seu Y maximo alterado e com qual valor
+            
+            // Aqui verifica-se qual gráfico tem mais horas, resultando na modificação necessária de acordo com isso
+            if contains(currentTimeStudied, highestHourComparison(currentTimeStudied, week2: pastTimeStudied2))
+            {
+            
+                pastLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied2)
+                pastLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied2)
+                
+                if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
+                    
+                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
+                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 0.0
+                        }, completion: nil)
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 1.0
+                        }, completion: nil)
+                    // Animacao de gráfico de baixo para cima.
+//                    currentLineChartView.animate(yAxisDuration: 2.0, easing: { (elapsed, duration) -> CGFloat in
+//                        var position = (self.currentLineChartView.scaleY/((CGFloat((elapsed)/duration))))
+//                        return position
+//                    })
+                }
+            
+            }
+            
+            else
+            {
+                // Ocorre caso o número máximo atingido, seja de alguma semana anterior
+                
+//                let yAxisMaxInitial = currentLineChartView.leftAxis.customAxisMax
+                currentLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied2)
+                currentLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied2)
+                setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied2)
+                
+//                // Animacao de gráfico de baixo para cima.
+//                currentLineChartView.animate(yAxisDuration: 2.0, easing: { (elapsed, duration) -> CGFloat in
+//                    var position = (self.currentLineChartView.scaleY/((CGFloat((elapsed)/duration))))
+//                    return position
+//                })
+                
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 0.0
+                    }, completion: nil)
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 1.0
+                    }, completion: nil)
+                
+                
+                if pastLineChartView.leftAxis.customAxisMax != currentLineChartView.leftAxis.customAxisMax {
+                
+                    pastLineChartView.leftAxis.customAxisMax = currentLineChartView.leftAxis.customAxisMax
+                    pastLineChartView.rightAxis.customAxisMax = currentLineChartView.rightAxis.customAxisMax
+
+                }
+            
+            }
+            
             setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied2)
-            pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+            pastLineChartView.animate(yAxisDuration: 2.0)
             
         case 2:
+            
+            if contains(currentTimeStudied, highestHourComparison(currentTimeStudied, week2: pastTimeStudied3))
+            {
+                
+                pastLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied3)
+                pastLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied3)
+                
+                if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
+                    
+                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
+                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 0.0
+                        }, completion: nil)
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 1.0
+                        }, completion: nil)
+                }
+//                setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
+//                
+            }
+                
+            else
+            {
+                currentLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied3)
+                currentLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied3)
+                setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied3)
+//                currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+                
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 0.0
+                    }, completion: nil)
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 1.0
+                    }, completion: nil)
+                
+                if pastLineChartView.leftAxis.customAxisMax != currentLineChartView.leftAxis.customAxisMax {
+                    
+                    pastLineChartView.leftAxis.customAxisMax = currentLineChartView.leftAxis.customAxisMax
+                    pastLineChartView.rightAxis.customAxisMax = currentLineChartView.rightAxis.customAxisMax
+                    
+                }
+                
+            }
+            
             setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied3)
-            pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+            pastLineChartView.animate(yAxisDuration: 2.0)
             
         default:
+            
+            if contains(currentTimeStudied, highestHourComparison(currentTimeStudied, week2: pastTimeStudied1))
+            {
+                
+                pastLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied1)
+                pastLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied1)
+                
+                if currentLineChartView.leftAxis.customAxisMax != pastLineChartView.leftAxis.customAxisMax {
+                    
+                    currentLineChartView.leftAxis.customAxisMax = pastLineChartView.leftAxis.customAxisMax
+                    currentLineChartView.rightAxis.customAxisMax = pastLineChartView.rightAxis.customAxisMax
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 0.0
+                        }, completion: nil)
+                    UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                        self.currentLineChartView.alpha = 1.0
+                        }, completion: nil)
+                }
+            }
+                
+            else
+            {
+                currentLineChartView.leftAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied1)
+                currentLineChartView.rightAxis.customAxisMax = highestHourComparison(currentTimeStudied, week2: pastTimeStudied1)
+                setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
+//                currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+                
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 0.0
+                    }, completion: nil)
+                UIView.animateWithDuration(1.3, delay: 0.0, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                    self.currentLineChartView.alpha = 1.0
+                    }, completion: nil)
+
+                
+                if pastLineChartView.leftAxis.customAxisMax != currentLineChartView.leftAxis.customAxisMax {
+                    
+                    pastLineChartView.leftAxis.customAxisMax = currentLineChartView.leftAxis.customAxisMax
+                    pastLineChartView.rightAxis.customAxisMax = currentLineChartView.rightAxis.customAxisMax
+                    
+                }
+                
+            }
+            
             setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
-            pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+            pastLineChartView.animate(yAxisDuration: 2.0)
             //            println("Test")
             
         }
