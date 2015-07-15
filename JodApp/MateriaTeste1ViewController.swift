@@ -19,6 +19,7 @@ class MateriaTeste1ViewController: UIViewController {
 //  var y  : ChartAxisBase
 //    var x  : BarLineChartViewBase
 
+    let transitionManager = TransitionManager()
     
     @IBOutlet weak var currentLineChartView: LineChartView!
     @IBOutlet weak var pastLineChartView: LineChartView!
@@ -44,35 +45,11 @@ class MateriaTeste1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println("Entrou")
-        
-        var obj = PFObject(className: "Alunos")
-        obj["tutor"] = PFUser.currentUser()
-        obj["nome"] = "Ogari"
-        obj.saveInBackgroundWithBlock { (sucess, error) -> Void in
-            if error == nil{
-                println("Salvo com sucesso")
-            }
-            else
-            {
-                println(error)
-            }
-        }
-        
-        var vetor = getStudents()
-        
-        for vetor in vetor{
-            println(vetor)
-        }
-        
-        println("saiu")
-        
-        // Do any additional setup after loading the view.
-        
-        // let days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"]
-        //let currentTimeStudied = [0.5, 3.0, 0.5, 0.0, 1.0, 1.0, 1.5] // 7.5h totais
-        //  var pastTimeStudied = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0]
+        self.transitionManager.sourceViewController = self
+
+//        setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
+//        currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
+//        pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
         
         chartBeingShown(cont)
         
@@ -373,6 +350,26 @@ class MateriaTeste1ViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
+
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        // set transition delegate for our menu view controller
+        let menu = segue.destinationViewController as! MenuViewController
+        menu.transitioningDelegate = self.transitionManager
+        self.transitionManager.menuViewController = menu
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qoR-KC-A4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -266,29 +266,13 @@
                         <outlet property="hourDisplay" destination="00b-hC-L07" id="tKw-w0-grI"/>
                         <outlet property="minuteDisplay" destination="BqN-wr-EwP" id="rf9-Sn-jt1"/>
                         <outlet property="secondDisplay" destination="d4i-9G-r1l" id="u5s-0X-zHV"/>
+                        <segue destination="Xb2-Pu-N15" kind="presentation" identifier="presentMenu" modalPresentationStyle="overFullScreen" id="9bn-iM-KNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hca-1f-Q0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QdK-cu-ssf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="64" y="217"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KoN-7B-ODC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qoR-KC-A4m" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pWX-c0-4Je">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="nEx-Lt-9ZO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u82-g1-GCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-606" y="217"/>
         </scene>
         <!--MatériasDoAluno View Controller-->
         <scene sceneID="pmO-wD-KA0">
@@ -322,10 +306,42 @@
                             <outlet property="delegate" destination="McF-xa-82w" id="vhn-7c-mzx"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Xb2-Pu-N15" kind="presentation" id="w0V-Hu-qYX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi8-4k-Dby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-606" y="896"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="3EV-Dg-AGf">
+            <objects>
+                <viewController id="Xb2-Pu-N15" customClass="MenuViewController" customModule="JodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4h-qh-eFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="iqy-30-AfM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E7s-tm-z6F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gi-kD-uR2">
+                                <rect key="frame" x="25" y="334" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="QdK-cu-ssf" kind="unwind" identifier="dismissMenu" unwindAction="unwindToViewController:" id="zwC-CM-Elm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvd-RJ-4Pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="933"/>
         </scene>
         <!--MatériaTeste1 View Controller-->
         <scene sceneID="Swl-Ft-HKa">
@@ -347,7 +363,7 @@
                                 <rect key="frame" x="50" y="314" width="500" height="266"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-cx-1gJ" userLabel="Backwards">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-cx-1gJ" userLabel="Backwards">
                                 <rect key="frame" x="0.0" y="433" width="38" height="49"/>
                                 <state key="normal" image="setaEsq.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -356,7 +372,7 @@
                                     <action selector="backButton:" destination="BNY-R7-pbb" eventType="touchUpInside" id="txH-mc-ngc"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-l8-YpY" userLabel="Forwards">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-l8-YpY" userLabel="Forwards">
                                 <rect key="frame" x="562" y="433" width="38" height="49"/>
                                 <state key="normal" image="setaDir.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -405,7 +421,8 @@
         <image name="unchecked_checkbox.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VLX-XH-8lK"/>
+        <segue reference="NHq-5t-Xgo"/>
         <segue reference="vzy-MW-lpb"/>
+        <segue reference="w0V-Hu-qYX"/>
     </inferredMetricsTieBreakers>
 </document>

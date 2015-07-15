@@ -31,7 +31,7 @@ class teste: UITableViewController {
         var vetor = getStudents()
         
         for vetor in vetor{
-            println(vetor["nome"])
+            println(vetor["portugues"])
         }
         
         println("saiu")

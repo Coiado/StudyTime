@@ -11,6 +11,10 @@ import Parse
 
 class ChronometerViewController: UIViewController {
 
+    
+    let transitionManager = TransitionManager()
+
+    
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
     @IBOutlet weak var secondDisplay: UILabel!
@@ -25,6 +29,7 @@ class ChronometerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.transitionManager.sourceViewController = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,7 +124,25 @@ class ChronometerViewController: UIViewController {
         
     }
 
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
+        println("Teste")
+    }
 
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        // set transition delegate for our menu view controller
+        let menu = segue.destinationViewController as! MenuViewController
+        menu.transitioningDelegate = self.transitionManager
+        self.transitionManager.menuViewController = menu
+        
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return self.presentingViewController == nil ? UIStatusBarStyle.Default : UIStatusBarStyle.LightContent
+    }
+
+    
 }
 

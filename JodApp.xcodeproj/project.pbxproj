@@ -45,6 +45,8 @@
 		5F96AF6B1B543DCE008F3B89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6A1B543DCE008F3B89 /* Info.plist */; };
 		5F96AF6E1B544CE1008F3B89 /* unchecked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */; };
 		5F96AF701B544CEE008F3B89 /* checked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */; };
+		5F9F8AB91B56C770007A41E6 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */; };
+		5F9F8ABC1B56CFB0007A41E6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		5F96AF6A1B543DCE008F3B89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 		5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
+		5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				5F95B28D1B5574F100679939 /* teste.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
+				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
+				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
 				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
 				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
 				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
@@ -412,9 +418,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9F8AB91B56C770007A41E6 /* TransitionManager.swift in Sources */,
 				08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */,
 				3FE70C0E1B4D487E00BFD1DC /* LoginViewController.swift in Sources */,
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
+				5F9F8ABC1B56CFB0007A41E6 /* MenuViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				5F95B28E1B5574F100679939 /* teste.swift in Sources */,

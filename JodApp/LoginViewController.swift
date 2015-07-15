@@ -29,11 +29,9 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
             
             if(tutor == false){
-                println("aluno")
                 self.performSegueWithIdentifier("aluno", sender: self)
             }
             else{
-                println("tutor")
                 self.performSegueWithIdentifier("tutor", sender: self)
             }
             
@@ -44,20 +42,20 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       PFUser.logOut()
-//        
-//        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
-//            
-//            if(tutor == false){
-//                println("aluno")
-//                performSegueWithIdentifier("aluno", sender: self)
-//            }
-//            else{
-//                println("tutor")
-//                performSegueWithIdentifier("tutor", sender: self)
-//            }
-//            
-//        }
+//       PFUser.logOut()
+        
+        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+            
+            if(tutor == false){
+                println("aluno")
+                performSegueWithIdentifier("aluno", sender: self)
+            }
+            else{
+                println("tutor")
+                performSegueWithIdentifier("tutor", sender: self)
+            }
+            
+        }
         
         
         setLabel()
