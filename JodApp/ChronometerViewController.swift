@@ -24,7 +24,6 @@ class ChronometerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("load")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -85,7 +84,6 @@ class ChronometerViewController: UIViewController {
     
     
     @IBAction func study(sender: AnyObject) {
-        println("oixr")
         if (!self.timer.valid){
             let updateSelector : Selector = "updateTime"
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
@@ -100,7 +98,6 @@ class ChronometerViewController: UIViewController {
     }
     
     @IBAction func finish(sender: AnyObject) {
-        println("Teste")
         self.timer.invalidate()
         self.count = 0
 //        self.hourDisplay.text = "00"
@@ -110,13 +107,15 @@ class ChronometerViewController: UIViewController {
         var minute:Int? = self.minuteDisplay.text?.toInt()
         var seconds:Int? = self.secondDisplay.text?.toInt()
         
-        var time: PFObject = PFObject(className: "StudyTime")
-        time["hour"] = hour
-        time["minute"] = minute
-        time["seconds"] = seconds
+        println("hora - \(hour) \n minuto - \(minute) \n segundo - \(seconds)")
         
-        time.saveEventually { (sucess, error) -> Void in
-        }
+//        var time: PFObject = PFObject(className: "StudyTime")
+//        time["hour"] = hour
+//        time["minute"] = minute
+//        time["seconds"] = seconds
+//        
+//        time.saveEventually { (sucess, error) -> Void in
+//        }
         
     }
 

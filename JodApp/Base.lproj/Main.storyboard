@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BNY-R7-pbb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qoR-KC-A4m">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,12 +20,12 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3M-dG-QcD">
                                 <rect key="frame" x="55" y="112" width="443" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-PO-fkV">
                                 <rect key="frame" x="55" y="180" width="443" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYK-5K-7jc">
                                 <rect key="frame" x="143" y="246" width="136" height="30"/>
@@ -69,6 +69,8 @@
                         <outlet property="passwordTextField" destination="JSz-PO-fkV" id="XmF-KB-izt"/>
                         <outlet property="signInButton" destination="PcI-BA-tey" id="M58-6J-k0y"/>
                         <segue destination="83e-4t-JEY" kind="show" identifier="signup" id="DTg-WU-FyU"/>
+                        <segue destination="evm-2d-6NE" kind="show" identifier="aluno" id="NHq-5t-Xgo"/>
+                        <segue destination="McF-xa-82w" kind="show" identifier="tutor" id="q0D-Jb-cMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -96,30 +98,66 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-7o-NLP">
                                 <rect key="frame" x="40" y="142" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4f-Zr-hCw">
                                 <rect key="frame" x="40" y="203" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6Q-Vo-in2">
                                 <rect key="frame" x="40" y="260" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-Au-iJ9">
                                 <rect key="frame" x="40" y="334" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRF-nk-Jvt">
-                                <rect key="frame" x="16" y="423" width="282" height="30"/>
+                                <rect key="frame" x="20" y="466" width="282" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="signupAction:" destination="83e-4t-JEY" eventType="touchUpInside" id="JSC-a6-caa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixu-ys-zyD">
+                                <rect key="frame" x="69" y="410" width="24" height="25"/>
+                                <state key="normal" title="Button" image="unchecked_checkbox.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="checked_checkbox.png"/>
+                                <state key="selected" image="checked_checkbox.png"/>
+                                <state key="highlighted" image="checked_checkbox.png"/>
+                                <connections>
+                                    <action selector="tutorAction:" destination="83e-4t-JEY" eventType="touchUpInside" id="pEh-WZ-yGP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tj1-v0-AVS">
+                                <rect key="frame" x="19" y="414" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKf-1l-sAn">
+                                <rect key="frame" x="206" y="414" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-PZ-hxn">
+                                <rect key="frame" x="256" y="410" width="23" height="25"/>
+                                <state key="normal" title="Button" image="unchecked_checkbox.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="checked_checkbox.png"/>
+                                <state key="selected" image="checked_checkbox.png"/>
+                                <state key="highlighted" image="checked_checkbox.png"/>
+                                <connections>
+                                    <action selector="studentAction:" destination="83e-4t-JEY" eventType="touchUpInside" id="frz-Th-3me"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,11 +170,17 @@
                         <outlet property="passwordTextField" destination="a4f-Zr-hCw" id="xFd-vi-aYA"/>
                         <outlet property="signupButton" destination="uRF-nk-Jvt" id="wzQ-Jp-dDW"/>
                         <outlet property="signupLabel" destination="7uP-bI-gL7" id="XWu-iD-ikK"/>
+                        <outlet property="studentButton" destination="NGg-PZ-hxn" id="ege-dP-apb"/>
+                        <outlet property="studentLabel" destination="cKf-1l-sAn" id="Gq8-tg-nlY"/>
+                        <outlet property="tutorButton" destination="Ixu-ys-zyD" id="Uja-y5-k5t"/>
+                        <outlet property="tutorLabel" destination="Tj1-v0-AVS" id="KHI-UP-jJJ"/>
+                        <segue destination="evm-2d-6NE" kind="show" identifier="aluno" id="VLX-XH-8lK"/>
+                        <segue destination="McF-xa-82w" kind="show" identifier="tutor" id="vzy-MW-lpb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV9-9a-i9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="-593"/>
+            <point key="canvasLocation" x="146" y="-601"/>
         </scene>
         <!--Chronometer View Controller-->
         <scene sceneID="jCp-8S-Vek">
@@ -249,7 +293,7 @@
         <!--MatériasDoAluno View Controller-->
         <scene sceneID="pmO-wD-KA0">
             <objects>
-                <tableViewController id="McF-xa-82w" userLabel="MatériasDoAluno View Controller" sceneMemberID="viewController">
+                <tableViewController id="McF-xa-82w" userLabel="MatériasDoAluno View Controller" customClass="teste" customModule="JodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RmF-fT-tEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,7 +307,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matéria Teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBG-iq-zeB">
                                             <rect key="frame" x="15" y="11" width="103" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -355,7 +399,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked_checkbox.png" width="128" height="128"/>
         <image name="setaDir.jpg" width="46" height="46"/>
         <image name="setaEsq.jpg" width="49" height="46"/>
+        <image name="unchecked_checkbox.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VLX-XH-8lK"/>
+        <segue reference="vzy-MW-lpb"/>
+    </inferredMetricsTieBreakers>
 </document>

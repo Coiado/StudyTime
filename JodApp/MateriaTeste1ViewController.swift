@@ -8,6 +8,8 @@
 
 import UIKit
 import Charts
+import Parse
+
 
 class MateriaTeste1ViewController: UIViewController {
     
@@ -34,6 +36,29 @@ class MateriaTeste1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println("Entrou")
+        
+        var obj = PFObject(className: "Alunos")
+        obj["tutor"] = PFUser.currentUser()
+        obj["nome"] = "Ogari"
+        obj.saveInBackgroundWithBlock { (sucess, error) -> Void in
+            if error == nil{
+                println("Salvo com sucesso")
+            }
+            else
+            {
+                println(error)
+            }
+        }
+        
+        var vetor = getStudents()
+        
+        for vetor in vetor{
+            println(vetor)
+        }
+        
+        println("saiu")
         
         // Do any additional setup after loading the view.
         
@@ -104,6 +129,21 @@ class MateriaTeste1ViewController: UIViewController {
             
         }
     }
+    
+    
+    
+    
+    func getStudents() -> NSArray{
+        
+        let user = PFUser.currentUser()
+        
+        var query = PFQuery(className: "Alunos")
+        query.whereKey("tutor", equalTo: user!)
+        return query.findObjects()!
+    }
+    
+    
+    
     
     @IBAction func backButton(sender: AnyObject) {
         

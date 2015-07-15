@@ -1,0 +1,44 @@
+/* text field da confirmacao da senah */
+"Confirm password" = "Confirma a senha";
+
+/* text field do email */
+"E-mail" = "E-mail";
+
+/* titulo da mensagem de erro
+   titulo do error */
+"Error" = "Erro";
+
+/* botao de login
+   label superior login */
+"Login" = "Entrar";
+
+/* titulo da mensagem de erro */
+"Login failed" = "Login falhou";
+
+/* label para mostrar o cadastro */
+"New user?" = "Novo usuário?";
+
+/* text fiedl da senha
+   text field de senha */
+"Password" = "Senha";
+
+/* erro de quando a senha nao é a mesma */
+"Password does not match" = "A senha não é a mesma";
+
+/* error de email */
+"Please enter a valid e-mail" = "Por favor, entre um e-mail válido";
+
+/* Botao de cadastro
+   botao de cadastro
+   label de cadastro */
+"Sign in" = "Cadastrar";
+
+/* text field de usuario */
+"Username" = "Usuário";
+
+/* mensagem de erro */
+"Username and password must be at least 6 caracter" = "Usuário e senha devem ter pelo menos 6 caracteres";
+
+/* mensagem de erro */
+"Username and password must be at least 6 caracters" = "Usuário e senha devem ter pelo menos 6 caracteres";
+

@@ -23,8 +23,42 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 150, 150)) as UIActivityIndicatorView
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+            
+            if(tutor == false){
+                println("aluno")
+                self.performSegueWithIdentifier("aluno", sender: self)
+            }
+            else{
+                println("tutor")
+                self.performSegueWithIdentifier("tutor", sender: self)
+            }
+            
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       PFUser.logOut()
+//        
+//        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+//            
+//            if(tutor == false){
+//                println("aluno")
+//                performSegueWithIdentifier("aluno", sender: self)
+//            }
+//            else{
+//                println("tutor")
+//                performSegueWithIdentifier("tutor", sender: self)
+//            }
+//            
+//        }
+        
         
         setLabel()
         setTextField()
@@ -39,8 +73,8 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     func setLabel()
     {
-        let loginString = NSLocalizedString("Entrar", comment: "label superior login")
-        let cadastroString = NSLocalizedString("Não é cadastrado?", comment: "label para mostrar o cadastro")
+        let loginString = NSLocalizedString("Login", comment: "label superior login")
+        let cadastroString = NSLocalizedString("New user?", comment: "label para mostrar o cadastro")
         
         loginLabel.text = loginString
         cadastroLabel.text = cadastroString
@@ -48,8 +82,8 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     func setButton()
     {
-        let loginButtonString = NSLocalizedString("Entrar", comment: "botao de login")
-        let signinButtonString = NSLocalizedString("Cadastre-se", comment: "botao de cadastro")
+        let loginButtonString = NSLocalizedString("Login", comment: "botao de login")
+        let signinButtonString = NSLocalizedString("Sign in", comment: "botao de cadastro")
         
         loginButton.setTitle(loginButtonString, forState: .Normal)
         signInButton.setTitle(signinButtonString, forState: .Normal)
@@ -58,8 +92,8 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     func setTextField()
     {
-        let loginTextString  = NSLocalizedString("Usuário", comment: "text field de usuario")
-        let passwordTextString  = NSLocalizedString("Senha", comment: "text field de senha")
+        let loginTextString  = NSLocalizedString("Username", comment: "text field de usuario")
+        let passwordTextString  = NSLocalizedString("Password", comment: "text field de senha")
         
         loginTextField.placeholder = loginTextString
         passwordTextField.placeholder = passwordTextString
@@ -76,8 +110,8 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         if (count(username) < 6 || count(password) < 6)
         {
             
-            let loginTitleString = NSLocalizedString("Login falhou", comment: "titulo da mensagem de erro")
-            let loginMessageString = NSLocalizedString("Usuário e senha devem ter mais de 6", comment: "mensagem de erro ")
+            let loginTitleString = NSLocalizedString("Login failed", comment: "titulo da mensagem de erro")
+            let loginMessageString = NSLocalizedString("Username and password must be at least 6 caracters", comment: "mensagem de erro ")
             
             var alert = UIAlertView(title: loginTitleString, message: loginMessageString, delegate: self, cancelButtonTitle: "Ok")
                 alert.show()
@@ -91,13 +125,21 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
             
             if ((user) != nil) {
                                 
-                var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
-            
+                if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+                    
+                    if(tutor == false){
+                        self.performSegueWithIdentifier("aluno", sender: self)
+                    }
+                    else{
+                        self.performSegueWithIdentifier("tutor", sender: self)
+                    }
+                    
+                }
+
                 
             }else {
                 
-                let errorString = NSLocalizedString("Erro", comment: "titulo da mensagem de erro")
+                let errorString = NSLocalizedString("Error", comment: "titulo da mensagem de erro")
                 
                 var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -112,7 +154,7 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     @IBAction func signInAction(sender: AnyObject) {
         
-        performSegueWithIdentifier("signup", sender: self)
+        self.performSegueWithIdentifier("signup", sender: self)
         
         
     }
