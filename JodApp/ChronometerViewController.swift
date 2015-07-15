@@ -9,7 +9,8 @@
 import UIKit
 import Parse
 
-class ChronometerViewController: UIViewController {
+
+class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 
     
     let transitionManager = TransitionManager()
@@ -25,6 +26,15 @@ class ChronometerViewController: UIViewController {
     var count : Double = 0
     
     var paused : Bool = false
+    
+    @IBOutlet weak var buttons: UICollectionView!
+    
+    var subjects : NSMutableArray!
+    
+    var subjectType : NSString!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
