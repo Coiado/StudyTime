@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChronometerViewController: UIViewController {
+
+class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
@@ -21,9 +22,19 @@ class ChronometerViewController: UIViewController {
     
     var paused : Bool = false
     
+    @IBOutlet weak var buttons: UICollectionView!
+    
+    var subjects : NSMutableArray!
+    
+    var subjectType : NSString!
+    
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("load")
+        subjects = ["Literatura","Matematica","Fisica","Geografia","Historia","Biologia","Quimica","Ingles","Redacao"]
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -105,7 +116,22 @@ class ChronometerViewController: UIViewController {
         self.secondDisplay.text = ":00"
     }
 
-
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.subjects.count
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ButtonCell {
+        var cell: ButtonCell!
+        cell = buttons.dequeueReusableCellWithReuseIdentifier("Button", forIndexPath: indexPath) as! ButtonCell
+        
+        cell.label.text = subjects.objectAtIndex(indexPath.row) as? String
+        return cell
+    }
 
 }
 
