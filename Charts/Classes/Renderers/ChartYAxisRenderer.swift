@@ -54,7 +54,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
     /// Sets up the y-axis labels. Computes the desired number of labels between
     /// the two given extremes. Unlike the papareXLabels() method, this method
     /// needs to be called upon every refresh of the view.
-    internal func computeAxisValues(#min: Double, max: Double)
+    public func computeAxisValues(#min: Double, max: Double)
     {
         var yMin = min
         var yMax = max

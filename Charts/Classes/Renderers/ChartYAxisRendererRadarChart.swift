@@ -31,7 +31,7 @@ public class ChartYAxisRendererRadarChart: ChartYAxisRenderer
         computeAxisValues(min: yMin, max: yMax)
     }
     
-    internal override func computeAxisValues(min yMin: Double, max yMax: Double)
+    public override func computeAxisValues(min yMin: Double, max yMax: Double)
     {
         var labelCount = _yAxis.labelCount
         var range = abs(yMax - yMin)
