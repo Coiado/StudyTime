@@ -31,7 +31,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             self.statusBarBackground.backgroundColor = self.sourceViewController.view.backgroundColor
             
             // add to window rather than view controller
-            UIApplication.sharedApplication().keyWindow!.addSubview(self.statusBarBackground)
+//            UIApplication.sharedApplication().keyWindow!.addSubview(self.statusBarBackground)
         }
     }
     
