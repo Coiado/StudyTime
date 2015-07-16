@@ -105,11 +105,11 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     @IBAction func study(sender: AnyObject) {
-        if (!self.timer.valid){
-            let updateSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-        }
+//        if (!self.timer.valid){
+//            let updateSelector : Selector = "updateTime"
+//            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+//            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+//        }
     }
     
     
@@ -161,6 +161,11 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if (!self.timer.valid){
+            let updateSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+        }
         println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
         
