@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 
-class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+class ChronometerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     
     let transitionManager = TransitionManager()
@@ -21,25 +21,31 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowL
     @IBOutlet weak var secondDisplay: UILabel!
     var timer : NSTimer = NSTimer()
     
+    @IBOutlet weak var buttons: UICollectionView!
+    
     var startTime = NSTimeInterval ()
     
     var count : Double = 0
     
     var paused : Bool = false
     
-    @IBOutlet weak var buttons: UICollectionView!
+//    @IBOutlet weak var buttons: UICollectionView!
     
-    var subjects : NSMutableArray!
+    var subjects : Array<String>!
     
     var subjectType : NSString!
     
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
+        
+        subjects = ["Matematica", "Historia", "Geografia", "Portugues", "Biologia", "Fisica", "Quimica", "Redacao", "Ingles"]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.buttons.flashScrollIndicators()
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,14 +140,31 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowL
         
     }
 
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return subjects.count
+    }
+    
     @IBAction func unwindToViewController (sender: UIStoryboardSegue){
         println("Teste")
+    
     }
 
-
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
+        cell.subjectsLabel.text = subjects[indexPath.row]
+        cell.backgroundColor = UIColor.blueColor()
+
+        return cell
+    
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
+    }
         
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // set transition delegate for our menu view controller
         let menu = segue.destinationViewController as! MenuViewController
         menu.transitioningDelegate = self.transitionManager
