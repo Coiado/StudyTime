@@ -23,8 +23,40 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 150, 150)) as UIActivityIndicatorView
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+            
+            if(tutor == false){
+                self.performSegueWithIdentifier("aluno", sender: self)
+            }
+            else{
+                self.performSegueWithIdentifier("tutor", sender: self)
+            }
+            
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//       PFUser.logOut()
+        
+        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+            
+            if(tutor == false){
+                println("aluno")
+                performSegueWithIdentifier("aluno", sender: self)
+            }
+            else{
+                println("tutor")
+                performSegueWithIdentifier("tutor", sender: self)
+            }
+            
+        }
+        
         
         setLabel()
         setTextField()
@@ -39,21 +71,30 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     func setLabel()
     {
-        loginLabel.text = "Entrar"
-        cadastroLabel.text = "Não é cadastrado?"
+        let loginString = NSLocalizedString("Login", comment: "label superior login")
+        let cadastroString = NSLocalizedString("New user?", comment: "label para mostrar o cadastro")
+        
+        loginLabel.text = loginString
+        cadastroLabel.text = cadastroString
     }
     
     func setButton()
     {
-        loginButton.setTitle("Entrar", forState: .Normal)
-        signInButton.setTitle("Cadastre-se", forState: .Normal)
+        let loginButtonString = NSLocalizedString("Login", comment: "botao de login")
+        let signinButtonString = NSLocalizedString("Sign in", comment: "botao de cadastro")
+        
+        loginButton.setTitle(loginButtonString, forState: .Normal)
+        signInButton.setTitle(signinButtonString, forState: .Normal)
     }
     
     
     func setTextField()
     {
-        loginTextField.placeholder = "Usuário"
-        passwordTextField.placeholder = "Senha"
+        let loginTextString  = NSLocalizedString("Username", comment: "text field de usuario")
+        let passwordTextString  = NSLocalizedString("Password", comment: "text field de senha")
+        
+        loginTextField.placeholder = loginTextString
+        passwordTextField.placeholder = passwordTextString
         
     }
     
@@ -66,7 +107,11 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         
         if (count(username) < 6 || count(password) < 6)
         {
-            var alert = UIAlertView(title: "Login falhou", message: "Usuário e senha devem ter mais de 6", delegate: self, cancelButtonTitle: "Ok")
+            
+            let loginTitleString = NSLocalizedString("Login failed", comment: "titulo da mensagem de erro")
+            let loginMessageString = NSLocalizedString("Username and password must be at least 6 caracters", comment: "mensagem de erro ")
+            
+            var alert = UIAlertView(title: loginTitleString, message: loginMessageString, delegate: self, cancelButtonTitle: "Ok")
                 alert.show()
             self.actInd.stopAnimating()
         }
@@ -77,11 +122,22 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
             self.actInd.stopAnimating()
             
             if ((user) != nil) {
-                
-                var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
+                                
+                if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+                    
+                    if(tutor == false){
+                        self.performSegueWithIdentifier("aluno", sender: self)
+                    }
+                    else{
+                        self.performSegueWithIdentifier("tutor", sender: self)
+                    }
+                    
+                }
+
                 
             }else {
+                
+                let errorString = NSLocalizedString("Error", comment: "titulo da mensagem de erro")
                 
                 var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -96,7 +152,7 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     @IBAction func signInAction(sender: AnyObject) {
         
-        performSegueWithIdentifier("signup", sender: self)
+        self.performSegueWithIdentifier("signup", sender: self)
         
         
     }

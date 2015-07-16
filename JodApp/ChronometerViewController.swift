@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 
 class ChronometerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    
+    let transitionManager = TransitionManager()
+
+    
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
     @IBOutlet weak var secondDisplay: UILabel!
@@ -33,9 +38,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("load")
-        subjects = ["Literatura","Matematica","Fisica","Geografia","Historia","Biologia","Quimica","Ingles","Redacao"]
         // Do any additional setup after loading the view, typically from a nib.
+        self.transitionManager.sourceViewController = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -115,14 +119,30 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBAction func finish(sender: AnyObject) {
         self.timer.invalidate()
         self.count = 0
-        self.hourDisplay.text = "00"
-        self.minuteDisplay.text = ":00"
-        self.secondDisplay.text = ":00"
+//        self.hourDisplay.text = "00"
+//        self.minuteDisplay.text = ":00"
+//        self.secondDisplay.text = ":00"
+        var hour:Int? = self.hourDisplay.text?.toInt()
+        var minute:Int? = self.minuteDisplay.text?.toInt()
+        var seconds:Int? = self.secondDisplay.text?.toInt()
+        
+        println("hora - \(hour) \n minuto - \(minute) \n segundo - \(seconds)")
+        
+//        var time: PFObject = PFObject(className: "StudyTime")
+//        time["hour"] = hour
+//        time["minute"] = minute
+//        time["seconds"] = seconds
+//        
+//        time.saveEventually { (sucess, error) -> Void in
+//        }
+        
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subjects.count
     }
+
+
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
@@ -136,5 +156,10 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return self.presentingViewController == nil ? UIStatusBarStyle.Default : UIStatusBarStyle.LightContent
+    }
+
+    
 }
 
