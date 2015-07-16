@@ -14,7 +14,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
 
     
     let transitionManager = TransitionManager()
-
+    
+    var day:Int = Int()
+    var month:Int = Int()
+    var year:Int = Int()
+    var weekday:Int = Int()
+    
     
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
@@ -25,7 +30,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var startTime = NSTimeInterval ()
     
-    var count : Double = 0
+    var count : Double = 5400
     
     var paused : Bool = false
     
@@ -38,6 +43,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDay()
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
         
@@ -103,11 +110,11 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     @IBAction func study(sender: AnyObject) {
-        if (!self.timer.valid){
-            let updateSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-        }
+//        if (!self.timer.valid){
+//            let updateSelector : Selector = "updateTime"
+//            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+//            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+//        }
     }
     
     
@@ -118,23 +125,24 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBAction func finish(sender: AnyObject) {
         self.timer.invalidate()
+        self.hourDisplay.text = "00"
+        self.minuteDisplay.text = ":00"
+        self.secondDisplay.text = ":00"
+        
+        var tempo = self.count/3600
+        
         self.count = 0
-//        self.hourDisplay.text = "00"
-//        self.minuteDisplay.text = ":00"
-//        self.secondDisplay.text = ":00"
-        var hour:Int? = self.hourDisplay.text?.toInt()
-        var minute:Int? = self.minuteDisplay.text?.toInt()
-        var seconds:Int? = self.secondDisplay.text?.toInt()
         
-        println("hora - \(hour) \n minuto - \(minute) \n segundo - \(seconds)")
         
-//        var time: PFObject = PFObject(className: "StudyTime")
-//        time["hour"] = hour
-//        time["minute"] = minute
-//        time["seconds"] = seconds
-//        
-//        time.saveEventually { (sucess, error) -> Void in
-//        }
+        var time: PFObject = PFObject(className: "StudyTime")
+        time["tempo"] = tempo
+        time["dia"] = self.day
+        time["mes"] = self.month
+        time["ano"] = self.year
+        time["aluno"] = 
+        time.saveEventually { (sucess, error) -> Void in
+        
+        }
         
     }
 
@@ -159,6 +167,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if (!self.timer.valid){
+            let updateSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+        }
+
         println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
         
@@ -175,5 +189,22 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     
+    func getDay(){
+        let today = NSDate()
+        
+        var day = NSDateFormatter()
+        day.dateFormat = "dd"
+        self.day = day.stringFromDate(today).toInt()!
+        
+        day.dateFormat = "MM"
+        self.month = day.stringFromDate(today).toInt()!
+        
+        day.dateFormat = "yyyy"
+        self.year = day.stringFromDate(today).toInt()!
+        
+        day.dateFormat = "e"
+        self.weekday = day.stringFromDate(today).toInt()!
+        
+    }
 }
 
