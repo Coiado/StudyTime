@@ -24,6 +24,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var paused : Bool = false
     
+//    @IBOutlet weak var buttons: UICollectionView!
+    
     var subjects : Array<String>!
     
     var subjectType : NSString!
