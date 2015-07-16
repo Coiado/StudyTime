@@ -282,7 +282,7 @@ class MateriaTeste1ViewController: UIViewController {
         }
     }
     
-    // MARK: - Métodos de mudança de gráficos passados
+    // MARK: - Métodos de mudança de gráficos passados (gráficos de baixo)
     
     @IBAction func backButton(sender: AnyObject) {
         

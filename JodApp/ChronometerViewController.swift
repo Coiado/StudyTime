@@ -9,12 +9,14 @@
 import UIKit
 
 
-class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+class ChronometerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
     @IBOutlet weak var secondDisplay: UILabel!
     var timer : NSTimer = NSTimer()
+    
+    @IBOutlet weak var buttons: UICollectionView!
     
     var startTime = NSTimeInterval ()
     
@@ -22,20 +24,20 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowL
     
     var paused : Bool = false
     
-    @IBOutlet weak var buttons: UICollectionView!
-    
-    var subjects : NSMutableArray!
+    var subjects : Array<String>!
     
     var subjectType : NSString!
     
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("load")
         subjects = ["Literatura","Matematica","Fisica","Geografia","Historia","Biologia","Quimica","Ingles","Redacao"]
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.buttons.flashScrollIndicators()
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,21 +118,20 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegateFlowL
         self.secondDisplay.text = ":00"
     }
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.subjects.count
+        return subjects.count
     }
     
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ButtonCell {
-        var cell: ButtonCell!
-        cell = buttons.dequeueReusableCellWithReuseIdentifier("Button", forIndexPath: indexPath) as! ButtonCell
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
+        cell.subjectsLabel.text = subjects[indexPath.row]
+        cell.backgroundColor = UIColor.blueColor()
         
-        cell.label.text = subjects.objectAtIndex(indexPath.row) as? String
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
 
 }

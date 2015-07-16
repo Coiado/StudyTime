@@ -12,6 +12,7 @@
 		08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */; };
 		08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C0F1B542138006BB2DC /* setaDir.jpg */; };
 		08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C101B542138006BB2DC /* setaEsq.jpg */; };
+		08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */; };
 		3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F21B46E96F00AB519D /* AppDelegate.swift */; };
 		3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */; };
 		3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */; };
@@ -38,7 +39,6 @@
 		3FE70C191B4D498C00BFD1DC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C121B4D48FD00BFD1DC /* ParseCrashReporting.framework */; };
 		3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */; };
 		3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */; };
-		3FE79C421B56B38E003C5C05 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE79C411B56B38E003C5C05 /* ButtonCell.swift */; };
 		5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F226F711B4D6BFA0063B326 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +85,7 @@
 		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
 		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
 		08BE0C101B542138006BB2DC /* setaEsq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaEsq.jpg; sourceTree = "<group>"; };
+		08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsCollectionCells.swift; sourceTree = "<group>"; };
 		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		3FE79C411B56B38E003C5C05 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,10 +207,10 @@
 		3F4203EF1B46E96F00AB519D /* JodApp */ = {
 			isa = PBXGroup;
 			children = (
-				3FE79C411B56B38E003C5C05 /* ButtonCell.swift */,
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
 				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
+				08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */,
 				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
 				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
@@ -388,8 +388,8 @@
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
+				08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */,
 				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
-				3FE79C421B56B38E003C5C05 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
