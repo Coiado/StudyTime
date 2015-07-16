@@ -29,9 +29,11 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
             
             if(tutor == false){
+                println("Aluno no ViewWillAppear")
                 self.performSegueWithIdentifier("aluno", sender: self)
             }
             else{
+                println("Tutor no ViewWillAppear")
                 self.performSegueWithIdentifier("tutor", sender: self)
             }
             
@@ -44,14 +46,17 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         
 //       PFUser.logOut()
         
+        println(PFUser.currentUser())
+        
+        
         if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
             
             if(tutor == false){
-                println("aluno")
+                println("Aluno no ViewDidLoad")
                 performSegueWithIdentifier("aluno", sender: self)
             }
             else{
-                println("tutor")
+                println("Tutor no ViewDidLoad")
                 performSegueWithIdentifier("tutor", sender: self)
             }
             
@@ -126,9 +131,11 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
                 if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
                     
                     if(tutor == false){
+                        println("Logou aluno")
                         self.performSegueWithIdentifier("aluno", sender: self)
                     }
                     else{
+                        println("Logou tutor")
                         self.performSegueWithIdentifier("tutor", sender: self)
                     }
                     
