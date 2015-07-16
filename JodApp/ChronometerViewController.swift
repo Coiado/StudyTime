@@ -141,19 +141,29 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subjects.count
     }
+    
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
+        println("Teste")
+    
+    }
 
-
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
         cell.subjectsLabel.text = subjects[indexPath.row]
         cell.backgroundColor = UIColor.blueColor()
-        
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
+        return cell
+    
+    }
+        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        // set transition delegate for our menu view controller
+        let menu = segue.destinationViewController as! MenuViewController
+        menu.transitioningDelegate = self.transitionManager
+        self.transitionManager.menuViewController = menu
+        
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
