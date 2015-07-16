@@ -28,11 +28,11 @@ class teste: UITableViewController {
 //            }
 //        }
         
-        var vetor = getStudents()
+        //var vetor = getStudents()
         
-        for vetor in vetor{
-            println(vetor["portugues"])
-        }
+//        for vetor in vetor{
+//            println(vetor["portugues"])
+//        }
         
         println("saiu")
     }
