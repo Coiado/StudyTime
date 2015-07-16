@@ -40,6 +40,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
+        
+        subjects = ["Matematica", "Historia", "Geografia", "Portugues", "Biologia", "Fisica", "Quimica", "Redacao", "Ingles"]
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -153,9 +155,13 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
         cell.subjectsLabel.text = subjects[indexPath.row]
         cell.backgroundColor = UIColor.blueColor()
-        println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
+
         return cell
     
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
