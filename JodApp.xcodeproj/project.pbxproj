@@ -40,7 +40,6 @@
 		3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */; };
 		3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */; };
 		5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F226F711B4D6BFA0063B326 /* SignInViewController.swift */; };
-		5F95B28E1B5574F100679939 /* teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F95B28D1B5574F100679939 /* teste.swift */; };
 		5F96AF611B543568008F3B89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF631B543568008F3B89 /* Localizable.strings */; };
 		5F96AF661B543568008F3B89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF681B543568008F3B89 /* InfoPlist.strings */; };
 		5F96AF6B1B543DCE008F3B89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6A1B543DCE008F3B89 /* Info.plist */; };
