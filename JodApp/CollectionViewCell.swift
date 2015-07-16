@@ -1,5 +1,5 @@
 //
-//  GraficoCirculoViewController.swift
+//  CollectionViewCell.swift
 //  JodApp
 //
 //  Created by Lucas Coiado Mota on 16/07/15.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class GraficoCirculoViewController: UICollectionViewController {
-
+class CollectionViewCell: UICollectionViewCell {
+    
 }

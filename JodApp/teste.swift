@@ -37,6 +37,7 @@ class teste: UITableViewController {
         println("saiu")
     }
     
+    
     func getStudents() -> NSArray{
         
         let user = PFUser.currentUser()
