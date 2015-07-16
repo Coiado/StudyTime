@@ -78,19 +78,17 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
             
             //calculate the minutes
             
-            let minutes = UInt8(count / 60.0) % 60
+            let minutes = UInt32(count / 60.0) % 60
             
             elapsedTime -= (NSTimeInterval(minutes) * 60)
+            elapsedTime -= (NSTimeInterval(hour) * 3600)
+            
             
             //calculate the seconds
             
-            let seconds = UInt8(elapsedTime)
+            let seconds = UInt32(elapsedTime)
             
             elapsedTime -= NSTimeInterval(seconds)
-            
-            //find out the fraction of milliseconds to be displayed.
-            
-            let fraction = UInt16(elapsedTime * 1000)
             
             //Display time counted in Storyboard
             
@@ -105,11 +103,11 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     @IBAction func study(sender: AnyObject) {
-//        if (!self.timer.valid){
-//            let updateSelector : Selector = "updateTime"
-//            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-//            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-//        }
+        if (!self.timer.valid){
+            let updateSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+        }
     }
     
     
@@ -161,11 +159,6 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if (!self.timer.valid){
-            let updateSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-        }
         println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
         
