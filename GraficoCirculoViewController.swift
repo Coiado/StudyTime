@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Charts
 
 class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var meses : [String] = ["janeiro","fevereiro","marco"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,7 @@ import Charts
 class GraphicsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var mes: UILabel!
+    @IBOutlet weak var grafico: PieChartView!
     
     
     

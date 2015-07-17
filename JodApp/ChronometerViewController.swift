@@ -19,6 +19,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     var month:Int = Int()
     var year:Int = Int()
     var weekday:Int = Int()
+    var currentSubject : String!
+    var started : Bool = false
     
     
     @IBOutlet weak var hourDisplay: UILabel!
@@ -28,9 +30,11 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var buttons: UICollectionView!
     
+    var chooseSubject : Bool = false
+    
     var startTime = NSTimeInterval ()
     
-    var count : Double = 5400
+    var count : Double = 0
     
     var paused : Bool = false
     
@@ -110,11 +114,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     @IBAction func study(sender: AnyObject) {
-//        if (!self.timer.valid){
-//            let updateSelector : Selector = "updateTime"
-//            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-//            self.startTime = NSDate.timeIntervalSinceReferenceDate()
-//        }
+        if (!self.timer.valid) && self.chooseSubject {
+            let updateSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
+            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+            self.started = true
+        }
     }
     
     
@@ -133,6 +138,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         
         self.count = 0
         
+        self.chooseSubject = false
+        self.started = false
         
 //        var time: PFObject = PFObject(className: "StudyTime")
 //        time["tempo"] = tempo
@@ -167,13 +174,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if (!self.timer.valid){
-            let updateSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: updateSelector, userInfo: nil, repeats: true)
-            self.startTime = NSDate.timeIntervalSinceReferenceDate()
+        if !self.started{
+            self.currentSubject = self.subjects[indexPath.row]
+            self.chooseSubject = true
         }
-
-        println("Botao \(indexPath.row) selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
+        
+        println("Botao \(indexPath.row) \(self.currentSubject)selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
