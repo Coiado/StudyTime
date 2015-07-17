@@ -33,7 +33,7 @@ class MateriaTeste1ViewController: UIViewController {
     var pastTimeStudied1 = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0] // 4.5h totais
     var pastTimeStudied2 = [0.5, 1.5, 1.0, 0.5, 0.5, 0.0, 0.5] // 4.5h totais
     var pastTimeStudied3 = [4.5, 1.0, 1.5, 1.0, 1.5, 0.5, 0.5] // 7.5h totais
-    let days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"]
+    let days = [NSLocalizedString("Mon", comment: "Monday"), NSLocalizedString("Tue", comment: "Tuesday"), NSLocalizedString("Wed", comment: "Wednesday"), NSLocalizedString("Thu", comment: "Thursday"), NSLocalizedString("Fri", comment: "Friday"), NSLocalizedString("Sat", comment: "Saturday"), NSLocalizedString("Sun", comment: "Sunday")]
     
     // Contador das "páginas" dos gráficos de semanas passadas
     var cont : Int8 = 0
@@ -79,7 +79,7 @@ class MateriaTeste1ViewController: UIViewController {
             pastDataEntries.append(dataEntry)
         }
         
-        let pastLineChartDataSet = LineChartDataSet(yVals: pastDataEntries, label: "Tempo de Estudo")
+        let pastLineChartDataSet = LineChartDataSet(yVals: pastDataEntries, label: NSLocalizedString("Study Time", comment: "Time studied"))
         let pastLineChartData = LineChartData(xVals: dataPoints, dataSet: pastLineChartDataSet)
         pastLineChartView.data = pastLineChartData
         pastLineChartView.descriptionText = ""
@@ -87,7 +87,7 @@ class MateriaTeste1ViewController: UIViewController {
         pastLineChartDataSet.circleColors = [(UIColor.redColor())]
         
         
-        let lineChartDataSet = LineChartDataSet(yVals: currentDataEntries, label: "Tempo de Estudo")
+        let lineChartDataSet = LineChartDataSet(yVals: currentDataEntries, label: NSLocalizedString("Study Time", comment: "Time studied"))
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         currentLineChartView.data = lineChartData
         currentLineChartView.descriptionText = ""

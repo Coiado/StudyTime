@@ -1,3 +1,5 @@
+// MARK: - Traducao--Login View Controller
+
 /* text field da confirmacao da senah */
 "Confirm password" = "Confirma a senha";
 
@@ -41,4 +43,6 @@
 
 /* mensagem de erro */
 "Username and password must be at least 6 caracters" = "Usuário e senha devem ter pelo menos 6 caracteres";
+
+
 
