@@ -19,7 +19,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     var month:Int = Int()
     var year:Int = Int()
     var weekday:Int = Int()
-    var currentSubject : String!
+    var currentSubject : Int!
     var started : Bool = false
     
     
@@ -134,6 +134,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         self.minuteDisplay.text = ":00"
         self.secondDisplay.text = ":00"
         
+        var user = PFUser.currentUser()
+        
         var tempo = self.count/3600
         
         self.count = 0
@@ -146,10 +148,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
 //        time["dia"] = self.day
 //        time["mes"] = self.month
 //        time["ano"] = self.year
-//        time["aluno"] = 
+//        time["aluno"] = user!["nome"]
+//        time["materia"] = currentSubject
 //        time.saveEventually { (sucess, error) -> Void in
 //        
 //        }
+        
         
     }
 
@@ -175,7 +179,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if !self.started{
-            self.currentSubject = self.subjects[indexPath.row]
+            self.currentSubject = indexPath.row
             self.chooseSubject = true
         }
         
