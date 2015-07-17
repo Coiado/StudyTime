@@ -169,7 +169,6 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
         cell.subjectsLabel.text = subjects[indexPath.row]
         cell.backgroundColor = UIColor.blueColor()
-
         return cell
     
     }
@@ -182,6 +181,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         
         println("Botao \(indexPath.row) \(self.currentSubject)selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
+    
+    
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // set transition delegate for our menu view controller
