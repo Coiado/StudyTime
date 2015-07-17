@@ -320,7 +320,7 @@
                                                     <rect key="frame" x="28" y="25" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -448,37 +448,53 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aUF-Ed-Gw2">
-                                    <size key="itemSize" width="365" height="268"/>
+                                    <size key="itemSize" width="482.5" height="352"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <view key="backgroundView" contentMode="scaleToFill" id="gL2-Xo-ftc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Grafico" id="kPe-yz-pNi" customClass="GraphicsCollectionViewCell" customModule="JodApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="482.5" height="352"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
                                                     <rect key="frame" x="161.5" y="0.0" width="42" height="20.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Las-DW-5yr">
-                                                    <rect key="frame" x="91" y="67" width="183" height="134"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Las-DW-5yr" customClass="PieChartView" customModule="Charts">
+                                                    <rect key="frame" x="8" y="28.5" width="466.5" height="315.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="ixj-4O-i2F" firstAttribute="bottom" secondItem="Las-DW-5yr" secondAttribute="top" constant="10" id="O7N-Gj-ei1"/>
                                             <constraint firstAttribute="centerX" secondItem="ixj-4O-i2F" secondAttribute="centerX" id="WKm-vu-WDH"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Las-DW-5yr" secondAttribute="bottom" id="Yet-4h-M4h"/>
+                                            <constraint firstAttribute="centerX" secondItem="Las-DW-5yr" secondAttribute="centerX" id="bI6-7y-9FV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Las-DW-5yr" secondAttribute="trailing" id="dQL-Cw-U4y"/>
+                                            <constraint firstAttribute="centerY" secondItem="Las-DW-5yr" secondAttribute="centerY" id="l1z-Nu-HMA"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="O7N-Gj-ei1"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
-                                            <outlet property="mes" destination="ixj-4O-i2F" id="pqx-PO-Xc2"/>
+                                            <outlet property="grafico" destination="Las-DW-5yr" id="1z3-fi-AQn"/>
+                                            <outlet property="mes" destination="ixj-4O-i2F" id="pJ1-r4-mzh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
