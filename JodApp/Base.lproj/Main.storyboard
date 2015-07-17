@@ -128,8 +128,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-Au-iJ9">
-                                <rect key="frame" x="60" y="238" width="480" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-Au-iJ9">
+                                <rect key="frame" x="60" y="240" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
@@ -377,7 +377,7 @@
         <!--MatériasDoAluno View Controller-->
         <scene sceneID="pmO-wD-KA0">
             <objects>
-                <tableViewController id="McF-xa-82w" userLabel="MatériasDoAluno View Controller" customClass="teste" customModule="JodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="McF-xa-82w" userLabel="MatériasDoAluno View Controller" customClass="TutorTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RmF-fT-tEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -589,7 +589,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VLX-XH-8lK"/>
-        <segue reference="vzy-MW-lpb"/>
+        <segue reference="q0D-Jb-cMj"/>
         <segue reference="w0V-Hu-qYX"/>
     </inferredMetricsTieBreakers>
 </document>

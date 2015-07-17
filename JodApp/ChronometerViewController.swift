@@ -134,15 +134,15 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         self.count = 0
         
         
-        var time: PFObject = PFObject(className: "StudyTime")
-        time["tempo"] = tempo
-        time["dia"] = self.day
-        time["mes"] = self.month
-        time["ano"] = self.year
-        time["aluno"] = 
-        time.saveEventually { (sucess, error) -> Void in
-        
-        }
+//        var time: PFObject = PFObject(className: "StudyTime")
+//        time["tempo"] = tempo
+//        time["dia"] = self.day
+//        time["mes"] = self.month
+//        time["ano"] = self.year
+//        time["aluno"] = 
+//        time.saveEventually { (sucess, error) -> Void in
+//        
+//        }
         
     }
 

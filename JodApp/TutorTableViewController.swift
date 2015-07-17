@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class teste: UITableViewController {
+class TutorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
