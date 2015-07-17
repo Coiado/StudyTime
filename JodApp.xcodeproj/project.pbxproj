@@ -49,6 +49,7 @@
 		5F96AF701B544CEE008F3B89 /* checked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */; };
 		5F9F8AB91B56C770007A41E6 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */; };
 		5F9F8ABC1B56CFB0007A41E6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */; };
+		5FA1ADF11B59394200E76358 /* TutorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +128,6 @@
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		5F95B28D1B5574F100679939 /* teste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teste.swift; sourceTree = "<group>"; };
 		5F96AF591B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		5F96AF5A1B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5F96AF621B543568008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 		5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
 		5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorTableViewController.swift; path = ../TutorTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
-				5F95B28D1B5574F100679939 /* teste.swift */,
+				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
 				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
 				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
@@ -432,6 +433,7 @@
 				3FE332951B581DE900908CBE /* GraphicsCollectionViewCell.swift in Sources */,
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
 				5F9F8ABC1B56CFB0007A41E6 /* MenuViewController.swift in Sources */,
+				5FA1ADF11B59394200E76358 /* TutorTableViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */,
