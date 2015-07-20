@@ -5,6 +5,8 @@
 //  Created by Ogari Pata Pacheco on 13/07/15.
 //  Copyright (c) 2015 Lucas Coiado Mota. All rights reserved.
 
+// FORCE PUSH MOTHERFUCKERS!
+
 import UIKit
 import Charts
 import Parse
@@ -253,7 +255,7 @@ class MateriaTeste1ViewController: UIViewController {
         
         for var a = 0; a < (totalDeSemanas - 1); a++
         {
-        
+          
             for var b = 0; b < 7; b++ {
             
 //                semanaEmQuestao[b] = diaInicial
