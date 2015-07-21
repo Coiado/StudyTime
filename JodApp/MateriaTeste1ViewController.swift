@@ -5,7 +5,7 @@
 //  Created by Ogari Pata Pacheco on 13/07/15.
 //  Copyright (c) 2015 Lucas Coiado Mota. All rights reserved.
 
-// FORCE PUSH MOTHERFUCKERS!
+// Push! All Hail Lucas!
 
 import UIKit
 import Charts
