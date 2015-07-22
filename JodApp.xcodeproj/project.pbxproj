@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08737D361B60163C001AB80D /* images-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 08737D351B60163C001AB80D /* images-2.png */; };
 		08BE0C071B540779006BB2DC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; };
 		08BE0C081B540779006BB2DC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08737D351B60163C001AB80D /* images-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images-2.png"; sourceTree = "<group>"; };
 		08BE0C011B540696006BB2DC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
 		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		08BE0C131B542141006BB2DC /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				08737D351B60163C001AB80D /* images-2.png */,
 				5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */,
 				5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */,
 				08BE0C101B542138006BB2DC /* setaEsq.jpg */,
@@ -404,6 +407,7 @@
 				5F96AF701B544CEE008F3B89 /* checked_checkbox.png in Resources */,
 				5F96AF6E1B544CE1008F3B89 /* unchecked_checkbox.png in Resources */,
 				5F96AF661B543568008F3B89 /* InfoPlist.strings in Resources */,
+				08737D361B60163C001AB80D /* images-2.png in Resources */,
 				5F96AF611B543568008F3B89 /* Localizable.strings in Resources */,
 				3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */,
 				3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */,

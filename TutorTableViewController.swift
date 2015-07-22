@@ -36,7 +36,7 @@ class TutorTableViewController: UITableViewController {
         
         self.tableView.tableFooterView = backgroundView
         
-        self.tableView.backgroundColor = UIColor.grayColor()
+        self.tableView.backgroundColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
         
         self.tableView.reloadData()
         

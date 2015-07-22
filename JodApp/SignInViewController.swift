@@ -152,9 +152,9 @@ class SignInViewController: UIViewController {
             actInd.stopAnimating()
         }
         
-        else if(count(username) < 6 || count(password) < 6 )
+        else if(count(username) < 5 || count(password) < 5 )
         {
-            let usernameErrorString = NSLocalizedString("Username and password must be at least 6 caracter", comment: "mensagem de erro")
+            let usernameErrorString = NSLocalizedString("Username and password must be at least 5 caracter", comment: "mensagem de erro")
             
             var alert = UIAlertView(title: errorString , message: usernameErrorString, delegate: self, cancelButtonTitle: "Ok")
             alert.show()
