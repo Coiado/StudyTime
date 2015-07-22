@@ -4,7 +4,7 @@
 //
 //  Created by Bruno Eiji Yoshida on 17/07/15.
 //  Copyright (c) 2015 Lucas Coiado Mota. All rights reserved.
-//
+//oi
 
 import UIKit
 import Parse
@@ -32,7 +32,16 @@ class TutorTableViewController: UITableViewController {
         
         self.actInd.stopAnimating()
         
+        var backgroundView = UIView(frame: CGRectZero)
+        
+        self.tableView.tableFooterView = backgroundView
+        
+        self.tableView.backgroundColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0)
+        
         self.tableView.reloadData()
+        
+        
+        
     }
     
     
@@ -41,13 +50,11 @@ class TutorTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
+        
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
-        // Get the corresponding candy from our candies array
         let obj: PFObject = self.array[indexPath.row]
         
-        // Configure the cell
         cell.textLabel!.text = obj["nome"] as? String
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
@@ -57,6 +64,8 @@ class TutorTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("teste", sender: tableView)
     }
+    
+    
     
     func getStudents() -> [PFObject]{
         

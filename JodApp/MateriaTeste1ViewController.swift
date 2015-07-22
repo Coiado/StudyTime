@@ -30,7 +30,7 @@ class MateriaTeste1ViewController: UIViewController {
    // var yAxis : ChartYAxis!
         
     // Onde estão todas as semanas de estudo do aluno
-    var currentTimeStudied = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] // 7.5h totais
+    var currentTimeStudied = [1.0, 0.5, 3.0, 1.0, 1.0, 0.5, 0.5] // 7.5h totais
     var pastTimeStudied1 = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0] // 4.5h totais
     var pastTimeStudied2 = [0.5, 1.5, 1.0, 0.5, 0.5, 0.0, 0.5] // 4.5h totais
     var pastTimeStudied3 = [4.5, 1.0, 1.5, 1.0, 1.5, 0.5, 0.5] // 7.5h totais
