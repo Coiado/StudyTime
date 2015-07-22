@@ -44,6 +44,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var subjectType : NSString!
     
+    var color: Array<UIColor>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,10 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         self.transitionManager.sourceViewController = self
         
         subjects = ["Matematica", "Historia", "Geografia", "Portugues", "Biologia", "Fisica", "Quimica", "Redacao", "Ingles"]
+        
+        color = [UIColor(red: 225/225, green: 0, blue: 31/225, alpha: 0.8),UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),UIColor(red: 244/255, green: 145/255, blue: 15/255, alpha: 1),UIColor(red: 148/255, green: 76/255, blue: 54/255, alpha: 1),UIColor(red: 43/255, green: 163/255, blue: 59/255, alpha: 1),UIColor(red: 35/255, green: 100/255, blue: 1, alpha: 1),UIColor(red: 118/255, green: 35/255, blue: 164/255, alpha: 1),UIColor(red: 226/255, green: 109/255, blue: 209/255, alpha: 1),UIColor(red: 1, green: 219/255, blue: 10/255, alpha: 0.9)]
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -171,7 +177,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
         cell.subjectsLabel.text = subjects[indexPath.row]
-        cell.backgroundColor = UIColor.blueColor()
+        cell.backgroundColor = self.color[indexPath.row]
         return cell
     
     }
