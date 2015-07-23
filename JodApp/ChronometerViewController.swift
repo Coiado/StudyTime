@@ -56,7 +56,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         
         subjects = ["Math", "History", "Geography", "Portuguese", "Biology", "Physics", "Chemistry", "Writing", "English"]
         
-        color = [UIColor(red: 225/225, green: 0, blue: 31/225, alpha: 0.8),UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),UIColor(red: 244/255, green: 145/255, blue: 15/255, alpha: 1),UIColor(red: 148/255, green: 76/255, blue: 54/255, alpha: 1),UIColor(red: 43/255, green: 163/255, blue: 59/255, alpha: 1),UIColor(red: 35/255, green: 100/255, blue: 1, alpha: 1),UIColor(red: 118/255, green: 35/255, blue: 164/255, alpha: 1),UIColor(red: 226/255, green: 109/255, blue: 209/255, alpha: 1),UIColor(red: 1, green: 219/255, blue: 10/255, alpha: 0.9)]
+        color = [UIColor(red: 225/255, green: 19/255, blue: 39/255, alpha: 0.8),UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),UIColor(red: 222/255, green: 128/255, blue: 28/255, alpha: 1),UIColor(red: 142/255, green: 93/255, blue: 50/255, alpha: 1),UIColor(red: 43/255, green: 163/255, blue: 59/255, alpha: 1),UIColor(red: 35/255, green: 100/255, blue: 1, alpha: 1),UIColor(red: 118/255, green: 35/255, blue: 164/255, alpha: 1),UIColor(red: 20/255, green: 153/255, blue: 210/255, alpha: 1),UIColor(red: 223/255, green: 197/255, blue: 26/255, alpha: 0.9)]
         
         
     }
