@@ -71,7 +71,7 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
         return pieChartData
     }
     
-    
+    // set the month
     func setMonth (){
         let today = NSDate()
         var day = NSDateFormatter()
