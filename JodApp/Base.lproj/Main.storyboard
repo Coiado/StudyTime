@@ -65,7 +65,7 @@
                                 <rect key="frame" x="165" y="50" width="270" height="180"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JSz-PO-fkV" firstAttribute="leading" secondItem="kvk-cv-BJj" secondAttribute="leading" id="1eo-JY-kov"/>
                             <constraint firstItem="mYK-5K-7jc" firstAttribute="top" secondItem="JSz-PO-fkV" secondAttribute="bottom" constant="30" id="2KO-jS-LNY"/>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KSx-Au-iJ9" firstAttribute="top" secondItem="d6Q-Vo-in2" secondAttribute="bottom" constant="10" id="4c6-dN-rOF"/>
                             <constraint firstItem="BZM-7o-NLP" firstAttribute="width" secondItem="nsf-0H-WTN" secondAttribute="width" multiplier="0.8" id="4cJ-KT-sSY"/>
@@ -317,7 +317,7 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lzl-Y1-3Jd">
                                 <rect key="frame" x="16" y="61" width="568" height="261.5"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wQp-qd-4vK">
                                     <size key="itemSize" width="99" height="71"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -463,7 +463,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GXl-Bh-7AX">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aUF-Ed-Gw2">
                                     <size key="itemSize" width="482.5" height="352"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -473,7 +473,7 @@
                                 <view key="backgroundView" contentMode="scaleToFill" id="gL2-Xo-ftc">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Grafico" id="kPe-yz-pNi" customClass="GraphicsCollectionViewCell" customModule="JodApp" customModuleProvider="target">
@@ -638,7 +638,7 @@
         <image name="unchecked_checkbox.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NHq-5t-Xgo"/>
         <segue reference="DSe-Yn-CXV"/>
+        <segue reference="NHq-5t-Xgo"/>
     </inferredMetricsTieBreakers>
 </document>
