@@ -26,7 +26,7 @@ class HSStudent{
     var studyTimeOct : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
     var studyTimeNov : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
     var studyTimeDec : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
-    var studyTime : [[Double]]!
+    var studyTime : [[Double]] = []
     
     init(){
         studyTime.append(self.studyTimeJan)

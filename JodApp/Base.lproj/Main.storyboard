@@ -486,27 +486,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="482.5" height="352"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
-                                                    <rect key="frame" x="220" y="0.0" width="42" height="20.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Las-DW-5yr" customClass="PieChartView" customModule="Charts">
+                                                    <rect key="frame" x="7" y="38" width="467" height="305.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
+                                                    <rect key="frame" x="220" y="8" width="42" height="20.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Las-DW-5yr" customClass="PieChartView" customModule="Charts">
-                                                    <rect key="frame" x="7" y="38" width="467" height="306"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="ixj-4O-i2F" firstAttribute="top" secondItem="kPe-yz-pNi" secondAttribute="topMargin" id="2qh-7o-udp"/>
                                             <constraint firstItem="ixj-4O-i2F" firstAttribute="bottom" secondItem="Las-DW-5yr" secondAttribute="top" constant="10" id="O7N-Gj-ei1"/>
                                             <constraint firstItem="Las-DW-5yr" firstAttribute="top" secondItem="ixj-4O-i2F" secondAttribute="bottom" constant="10" id="SzO-2Y-bQB"/>
                                             <constraint firstAttribute="centerX" secondItem="ixj-4O-i2F" secondAttribute="centerX" id="WKm-vu-WDH"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Las-DW-5yr" secondAttribute="bottom" id="Yet-4h-M4h"/>
                                             <constraint firstAttribute="centerX" secondItem="Las-DW-5yr" secondAttribute="centerX" id="bI6-7y-9FV"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Las-DW-5yr" secondAttribute="trailing" id="dQL-Cw-U4y"/>
-                                            <constraint firstAttribute="centerY" secondItem="Las-DW-5yr" secondAttribute="centerY" id="l1z-Nu-HMA"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
