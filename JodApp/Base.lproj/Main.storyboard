@@ -464,6 +464,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GXl-Bh-7AX">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="CwD-Ky-D1L"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aUF-Ed-Gw2">
                                     <size key="itemSize" width="482.5" height="352"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -483,14 +486,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="482.5" height="352"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
-                                                    <rect key="frame" x="161.5" y="0.0" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-4O-i2F">
+                                                    <rect key="frame" x="220" y="0.0" width="42" height="20.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Las-DW-5yr" customClass="PieChartView" customModule="Charts">
-                                                    <rect key="frame" x="8" y="28.5" width="466.5" height="315.5"/>
+                                                    <rect key="frame" x="7" y="38" width="467" height="306"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -498,6 +501,7 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="ixj-4O-i2F" firstAttribute="bottom" secondItem="Las-DW-5yr" secondAttribute="top" constant="10" id="O7N-Gj-ei1"/>
+                                            <constraint firstItem="Las-DW-5yr" firstAttribute="top" secondItem="ixj-4O-i2F" secondAttribute="bottom" constant="10" id="SzO-2Y-bQB"/>
                                             <constraint firstAttribute="centerX" secondItem="ixj-4O-i2F" secondAttribute="centerX" id="WKm-vu-WDH"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Las-DW-5yr" secondAttribute="bottom" id="Yet-4h-M4h"/>
                                             <constraint firstAttribute="centerX" secondItem="Las-DW-5yr" secondAttribute="centerX" id="bI6-7y-9FV"/>

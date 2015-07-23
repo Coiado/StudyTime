@@ -38,7 +38,8 @@ class HSStudent{
         studyTime.append(self.studyTimeJul)
         studyTime.append(self.studyTimeAug)
         studyTime.append(self.studyTimeSep)
-        
-        
+        studyTime.append(self.studyTimeOct)
+        studyTime.append(self.studyTimeNov)
+        studyTime.append(self.studyTimeDec)
     }
 }

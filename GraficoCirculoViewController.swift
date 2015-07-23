@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 
-class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var graph: PieChartView!
     var student : HSStudent
@@ -19,6 +19,7 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         setMonth()
+        student.init()
         setChart(student.subjects, values: student.studyTime)
         // Do any additional setup after loading the view.
     }
