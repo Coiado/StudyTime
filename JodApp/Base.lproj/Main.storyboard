@@ -316,7 +316,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lzl-Y1-3Jd">
-                                <rect key="frame" x="16" y="59" width="568" height="261.5"/>
+                                <rect key="frame" x="16" y="61" width="568" height="261.5"/>
                                 <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wQp-qd-4vK">
                                     <size key="itemSize" width="99" height="71"/>
@@ -357,7 +357,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="BqN-wr-EwP" secondAttribute="centerX" constant="12" id="0tm-RJ-QeV"/>
                             <constraint firstAttribute="centerX" secondItem="d4i-9G-r1l" secondAttribute="centerX" constant="-103" id="4ci-zp-Emc"/>
