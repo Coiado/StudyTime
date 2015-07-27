@@ -54,9 +54,17 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
         
-        subjects = ["Math", "History", "Geography", "Portuguese", "Biology", "Physics", "Chemistry", "Writing", "English"]
+        subjects = ["Math", "English", "Geography", "Physics" , "Biology", "Portuguese", "Chemistry", "History", "Writing"]
         
-        color = [UIColor(red: 225/255, green: 19/255, blue: 39/255, alpha: 0.8),UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),UIColor(red: 222/255, green: 128/255, blue: 28/255, alpha: 1),UIColor(red: 142/255, green: 93/255, blue: 50/255, alpha: 1),UIColor(red: 43/255, green: 163/255, blue: 59/255, alpha: 1),UIColor(red: 35/255, green: 100/255, blue: 1, alpha: 1),UIColor(red: 118/255, green: 35/255, blue: 164/255, alpha: 1),UIColor(red: 20/255, green: 153/255, blue: 210/255, alpha: 1),UIColor(red: 223/255, green: 197/255, blue: 26/255, alpha: 0.9)]
+        color = [UIColor(red: 202/255, green: 25/255, blue: 19/255, alpha: 1),   //Math
+                UIColor(red: 208/255, green: 182/255, blue: 14/255, alpha: 1),   //English
+                UIColor(red: 210/255, green: 127/255, blue: 32/255, alpha: 1),  //Geography
+                UIColor(red: 53/255, green: 89/255, blue: 188/255, alpha: 1),        //Physics
+                UIColor(red: 75/255, green: 164/255, blue: 80/255, alpha: 1),   //Biology
+                UIColor(red: 158/255, green: 41/255, blue: 11/255, alpha: 1),   //Portuguese
+                UIColor(red: 139/255, green: 1/255, blue: 198/255, alpha: 1),  //Chemistry
+                UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1), //History
+                UIColor(red: 37/255, green: 126/255, blue: 129/255, alpha: 1)]    // Writing
         
         
     }
