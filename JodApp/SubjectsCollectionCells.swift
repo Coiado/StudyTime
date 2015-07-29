@@ -17,7 +17,18 @@ class SubjectsCollectionCells: UICollectionViewCell {
         
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = true
-        
+        self.layer.borderColor = UIColor.blackColor().CGColor!
     }
+    
+    func highlight(){
+        self.layer.borderWidth = 3
+        self.subjectsLabel.textColor = UIColor.blackColor()
+    }
+    
+    func notHighlight(){
+        self.layer.borderWidth = 0
+        self.subjectsLabel.textColor = UIColor.whiteColor()
+    }
+    
 
 }

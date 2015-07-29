@@ -27,15 +27,16 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
-            
-            if(tutor == false){
-                println("Aluno no ViewWillAppear")
-                self.performSegueWithIdentifier("aluno", sender: self)
-            }
-            else{
-                println("Tutor no ViewWillAppear")
-                self.performSegueWithIdentifier("tutor", sender: self)
-            }
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                if(tutor == false){
+                    println("Aluno no ViewWillAppear")
+                    self.performSegueWithIdentifier("aluno", sender: self)
+                }
+                else{
+                    println("Tutor no ViewWillAppear")
+                    self.performSegueWithIdentifier("tutor", sender: self)
+                }
+            })
             
         }
 
@@ -49,18 +50,18 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         println(PFUser.currentUser())
         
         
-        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
-            
-            if(tutor == false){
-                println("Aluno no ViewDidLoad")
-                performSegueWithIdentifier("aluno", sender: self)
-            }
-            else{
-                println("Tutor no ViewDidLoad")
-                performSegueWithIdentifier("tutor", sender: self)
-            }
-            
-        }
+//        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+//            
+//            if(tutor == false){
+//                println("Aluno no ViewDidLoad")
+//                performSegueWithIdentifier("aluno", sender: self)
+//            }
+//            else{
+//                println("Tutor no ViewDidLoad")
+//                performSegueWithIdentifier("tutor", sender: self)
+//            }
+//            
+//        }
         
         
         setLabel()
