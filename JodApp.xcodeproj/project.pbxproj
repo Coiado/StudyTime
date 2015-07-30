@@ -21,6 +21,7 @@
 		3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FC1B46E96F00AB519D /* Images.xcassets */; };
 		3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */; };
 		3F42040C1B46E96F00AB519D /* JodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42040B1B46E96F00AB519D /* JodAppTests.swift */; };
+		3F5156331B6953AD00461993 /* ButtonsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */; };
 		3FE304081B5EC6BE008544CD /* HSStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE304071B5EC6BE008544CD /* HSStudent.swift */; };
 		3FE332911B58099400908CBE /* GraficoCirculoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */; };
 		3FE332951B581DE900908CBE /* GraphicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */; };
@@ -109,6 +110,7 @@
 		3F4203FF1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F4204051B46E96F00AB519D /* JodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F42040B1B46E96F00AB519D /* JodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodAppTests.swift; sourceTree = "<group>"; };
+		3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionView.swift; sourceTree = "<group>"; };
 		3FE304071B5EC6BE008544CD /* HSStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSStudent.swift; sourceTree = "<group>"; };
 		3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraficoCirculoViewController.swift; path = ../GraficoCirculoViewController.swift; sourceTree = "<group>"; };
 		3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicsCollectionViewCell.swift; path = ../GraphicsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
 				08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */,
 				3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */,
+				3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */,
 				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
 				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
 				3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */,
@@ -446,6 +449,7 @@
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */,
 				3FE332911B58099400908CBE /* GraficoCirculoViewController.swift in Sources */,
+				3F5156331B6953AD00461993 /* ButtonsCollectionView.swift in Sources */,
 				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
