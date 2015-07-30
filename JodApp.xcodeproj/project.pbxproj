@@ -45,6 +45,7 @@
 		3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */; };
 		3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */; };
 		5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F226F711B4D6BFA0063B326 /* SignInViewController.swift */; };
+		5F5FC24A1B694B420097EEBB /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5FC2491B694B420097EEBB /* tutorial.png */; };
 		5F96AF611B543568008F3B89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF631B543568008F3B89 /* Localizable.strings */; };
 		5F96AF661B543568008F3B89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF681B543568008F3B89 /* InfoPlist.strings */; };
 		5F96AF6B1B543DCE008F3B89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F96AF6A1B543DCE008F3B89 /* Info.plist */; };
@@ -134,6 +135,7 @@
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5F5FC2491B694B420097EEBB /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
 		5F96AF591B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		5F96AF5A1B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5F96AF621B543568008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		08BE0C131B542141006BB2DC /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				5F5FC2491B694B420097EEBB /* tutorial.png */,
 				08737D351B60163C001AB80D /* images-2.png */,
 				5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */,
 				5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */,
@@ -419,6 +422,7 @@
 				3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */,
 				08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */,
 				3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */,
+				5F5FC24A1B694B420097EEBB /* tutorial.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

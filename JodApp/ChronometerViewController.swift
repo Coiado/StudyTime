@@ -21,7 +21,9 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     var weekday:Int = Int()
     var currentSubject : Int!
     var started : Bool = false
+    var lastIndexPath: NSIndexPath?
     
+    var tutorialView:UIView = UIView()
     
     @IBOutlet weak var hourDisplay: UILabel!
     @IBOutlet weak var minuteDisplay: UILabel!
@@ -53,6 +55,8 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         getDay()
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
+        
+        
         
         subjects = ["Math", "English", "Geography", "Physics" , "Biology", "Portuguese", "Chemistry", "History", "Writing"]
         
@@ -143,6 +147,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func finish(sender: AnyObject) {
+        
         self.timer.invalidate()
         self.hourDisplay.text = "00"
         self.minuteDisplay.text = ":00"
@@ -176,8 +181,6 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func unwindToViewController (sender: UIStoryboardSegue){
-        println("Teste")
-    
     }
 
     
@@ -190,17 +193,38 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if !self.started{
-            self.currentSubject = indexPath.row
-            self.chooseSubject = true
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        if self.lastIndexPath != nil{
+            var lastCell = collectionView.cellForItemAtIndexPath(self.lastIndexPath!) as! SubjectsCollectionCells
+            lastCell.notHighlight()
         }
+        
+        self.currentSubject = indexPath.row
+        self.chooseSubject = true
+        
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as! SubjectsCollectionCells
+        cell.highlight()
+        
+        self.lastIndexPath = indexPath
         
         println("Botao \(indexPath.row) \(self.currentSubject)selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
+
     
-    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if !self.started{
         
+            var cell = collectionView.cellForItemAtIndexPath(indexPath) as! SubjectsCollectionCells
+            cell.notHighlight()
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return !self.started
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // set transition delegate for our menu view controller
         let menu = segue.destinationViewController as! MenuViewController
@@ -210,7 +234,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return self.presentingViewController == nil ? UIStatusBarStyle.Default : UIStatusBarStyle.LightContent
+        return UIStatusBarStyle.Default
     }
 
     
@@ -231,5 +255,53 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         self.weekday = day.stringFromDate(today).toInt()!
         
     }
+    @IBAction func tutorialButton(sender: AnyObject) {
+        
+        self.tutorialView.frame = CGRect(x: self.view.frame.width*0.05, y: self.view.frame.height * 0.05, width:
+            self.view.frame.width*0.90, height: self.view.frame.height*0.90)
+
+        self.tutorialView.backgroundColor = UIColor.purpleColor()
+        
+        self.tutorialView.layer.cornerRadius = 10
+        
+        self.view.addSubview(self.tutorialView)
+        
+        populateTutorialView()
+        
+        
+    }
+    
+    func populateTutorialView()
+    {
+        var image: UIImage = UIImage(named: "tutorial.png")!
+        
+        var imageView:UIImageView = UIImageView(image: image)
+        
+        imageView.frame = self.tutorialView.bounds
+        
+        self.tutorialView.addSubview(imageView)
+        
+
+        
+        var closeButton = UIButton()
+
+        closeButton.setTitle("X", forState: .Normal)
+        
+        closeButton.layer.cornerRadius = 10
+        closeButton.backgroundColor = UIColor.blackColor()
+        
+        closeButton.addTarget(self, action: "closeTutorial", forControlEvents: UIControlEvents.TouchUpInside)
+        closeButton.frame = CGRect(x: self.tutorialView.frame.width*0.85, y: 10, width: self.tutorialView.frame.width * 0.1 ,  height: self.tutorialView.frame.width * 0.1)
+        self.tutorialView.addSubview(closeButton)
+        
+        
+    }
+    
+    func closeTutorial(){
+        
+        self.tutorialView.removeFromSuperview()
+        
+    }
+    
 }
 
