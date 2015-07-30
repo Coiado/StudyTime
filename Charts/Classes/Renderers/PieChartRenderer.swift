@@ -21,17 +21,17 @@ public class PieChartRenderer: ChartDataRendererBase
     
     public var drawHoleEnabled = true
     public var holeTransparent = true
-    public var holeColor: UIColor? = UIColor.whiteColor()
-    public var holeRadiusPercent = CGFloat(0.5)
-    public var transparentCircleRadiusPercent = CGFloat(0.55)
+    public var holeColor: UIColor? = UIColor(red: 0, green: 0, blue: 0, alpha:0.0)
+    public var holeRadiusPercent = CGFloat(0.0)
+    public var transparentCircleRadiusPercent = CGFloat(0.0)
     public var centerTextColor = UIColor.blackColor()
     public var centerTextFont = UIFont.systemFontOfSize(12.0)
-    public var drawXLabelsEnabled = true
+    public var drawXLabelsEnabled = false
     public var usePercentValuesEnabled = false
     public var centerText: String!
-    public var drawCenterTextEnabled = true
+    public var drawCenterTextEnabled = false
     public var centerTextLineBreakMode = NSLineBreakMode.ByTruncatingTail
-    public var centerTextRadiusPercent: CGFloat = 1.0
+    public var centerTextRadiusPercent: CGFloat = 0.5
     
     public init(chart: PieChartView, animator: ChartAnimator?, viewPortHandler: ChartViewPortHandler)
     {
@@ -68,7 +68,7 @@ public class PieChartRenderer: ChartDataRendererBase
         var entries = dataSet.yVals
         var drawAngles = _chart.drawAngles
         var circleBox = _chart.circleBox
-        var radius = _chart.radius
+        var radius = _chart.radius - 10
         var innerRadius = drawHoleEnabled && holeTransparent ? radius * holeRadiusPercent : 0.0
         
         CGContextSaveGState(context)
@@ -135,7 +135,7 @@ public class PieChartRenderer: ChartDataRendererBase
         
         if (drawHoleEnabled)
         {
-            off = (r - (r * _chart.holeRadiusPercent)) / 2.0
+            off = (r - (r * _chart.holeRadiusPercent)) / 10.0
         }
         
         r -= off; // offset to keep things inside the chart
@@ -165,7 +165,7 @@ public class PieChartRenderer: ChartDataRendererBase
             }
             
             var valueFont = dataSet.valueFont
-            var valueTextColor = dataSet.valueTextColor
+            var valueTextColor = UIColor.whiteColor()
             
             var formatter = dataSet.valueFormatter
             if (formatter === nil)
@@ -233,7 +233,7 @@ public class PieChartRenderer: ChartDataRendererBase
         {
             CGContextSaveGState(context)
             
-            var radius = _chart.radius
+            var radius = _chart.radius - 10
             var holeRadius = radius * holeRadiusPercent
             var center = _chart.centerCircleBox
             
