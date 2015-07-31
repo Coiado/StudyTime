@@ -23,11 +23,16 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
                  UIColor(red: 139/255, green: 1/255, blue: 198/255, alpha: 1),   //Chemistry
                  UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),   //History
                  UIColor(red: 37/255, green: 126/255, blue: 129/255, alpha: 1)]  //Writing
+    var monthToday : Int!
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let today = NSDate()
+        var day = NSDateFormatter()
+        day.dateFormat = "MM"
+        self.monthToday = day.stringFromDate(today).toInt()!
         setMonth()
         setChart(student.subjects, values: student.studyTime)
         // Do any additional setup after loading the view.
@@ -38,51 +43,33 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    // Setting two Collection View in storyboard
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
-    }
-    
     // Setting Collection View number of items
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
-            return student.subjects.count
-        }
-        else {
-           return student.months.count
-        }
+        
+        return student.months.count
     }
     
     //Setting Collection View
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let section = indexPath.section
-//        if section == 0 {
-//            let cell1 : ButtonsCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Botoes", forIndexPath: indexPath) as! ButtonsCollectionViewCell
-//            //Setting Label Graphics in Collection View
-//            cell1.buttons.text = student.months[indexPath.row]
-//            return cell1
-//        }
-//        else{
-            let cell : GraphicsCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Grafico", forIndexPath: indexPath) as! GraphicsCollectionViewCell
+        let cell : GraphicsCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Grafico", forIndexPath: indexPath) as! GraphicsCollectionViewCell
             //Setting Graphics Collection View
-            let rect  = cell.grafico.frame
+        let rect  = cell.grafico.frame
         
-            cell.grafico.data = setChart(student.subjects, values: student.studyTime)[indexPath.row]
+        cell.grafico.data = setChart(student.subjects, values: student.studyTime)[indexPath.row]
         
-            cell.grafico.frame = CGRectMake(0, 0, 100, 100)
+        cell.grafico.frame = CGRectMake(0, 0, 100, 100)
         
-            //Setting Label Graphics in Collection View
-            cell.mes.text = student.months[indexPath.row]
-            return cell
-//        }
+        //Setting Label Graphics in Collection View
+        cell.mes.text = student.months[indexPath.row]
+        return cell
         
     }
     
     func setChart(dataPoints: [String], values: [[Double]]) -> [PieChartData] {
         var pieChartData : [PieChartData] = []
-        
         //Setting Data of Graphics
-        for j in 0..<values.count{
+        for j in 0..<self.monthToday{
             var dataEntries: [ChartDataEntry] = []
             for i in 0..<dataPoints.count {
                 let dataEntry = ChartDataEntry(value: values[j][i], xIndex: i)
@@ -91,6 +78,7 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
             var pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Study Time")
 //            Setting Color of Graphics
             pieChartDataSet.colors = color
+            pieChartDataSet.highlightEnabled = false
             pieChartData.append(PieChartData(xVals: dataPoints, dataSet: pieChartDataSet))
         }
         return pieChartData
@@ -98,12 +86,7 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
     
     // set the month
     func setMonth (){
-        let today = NSDate()
-        var day = NSDateFormatter()
-        day.dateFormat = "MM"
-        var monthToday = day.stringFromDate(today).toInt()!
-        monthToday--
-        switch monthToday {
+        switch self.monthToday {
         case 11..<12:
             student.months.append(NSLocalizedString("December", comment: "label do grafico de meses"))
             fallthrough

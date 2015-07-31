@@ -10,14 +10,14 @@ import Charts
 import Parse
 
 
-
 class MateriaTeste1ViewController: UIViewController {
     
- //   public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate <- Ver!
+//    public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate <- Ver!
 //    public class ChartAxisBase: ChartComponentBase
-    
+//    
 //  var y  : ChartAxisBase
 //    var x  : BarLineChartViewBase
+// axisLine
 
     
     @IBOutlet weak var currentLineChartView: LineChartView!
@@ -29,7 +29,7 @@ class MateriaTeste1ViewController: UIViewController {
    // var yAxis : ChartYAxis!
         
     // Onde estão todas as semanas de estudo do aluno
-    var currentTimeStudied = [1.0, 0.5, 3.0, 1.0, 1.0, 0.5, 0.5] // 7.5h totais
+    var currentTimeStudied = [1.0, 0.5, 3.0, 1.0, 0.5, 1.0, 0.5] // 7.5h totais
     var pastTimeStudied1 = [1.0, 0.5, 0.5, 1.0, 1.5, 0.0, 0.0] // 4.5h totais
     var pastTimeStudied2 = [0.5, 1.5, 1.0, 0.5, 0.5, 0.0, 0.5] // 4.5h totais
     var pastTimeStudied3 = [4.5, 1.0, 1.5, 1.0, 1.5, 0.5, 0.5] // 7.5h totais
@@ -41,6 +41,13 @@ class MateriaTeste1ViewController: UIViewController {
     // Necessário para a animação de mudança de gráfico passado
     var basePositionForAnimation : CGRect!
     
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.LandscapeLeft.rawValue | UIInterfaceOrientation.LandscapeRight.rawValue
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -284,14 +291,22 @@ class MateriaTeste1ViewController: UIViewController {
         let pastLineChartData = LineChartData(xVals: dataPoints, dataSet: pastLineChartDataSet)
         pastLineChartView.data = pastLineChartData
         pastLineChartView.descriptionText = ""
-        pastLineChartDataSet.colors = [(UIColor.redColor())]
-        pastLineChartDataSet.circleColors = [(UIColor.redColor())]
+        pastLineChartView.gridBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        pastLineChartView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        pastLineChartView.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        pastLineChartView._xAxis.axisLineColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        pastLineChartDataSet.colors = [(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.8))]
+        pastLineChartDataSet.circleColors = [(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.8))]
+//        pastLineChartDataSet.circleHoleColor = (UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.4))
+        pastLineChartDataSet.circleHoleColor = (UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.8))
         
         
         let lineChartDataSet = LineChartDataSet(yVals: currentDataEntries, label: NSLocalizedString("Study Time", comment: "Time studied"))
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         currentLineChartView.data = lineChartData
         currentLineChartView.descriptionText = ""
+//        lineChartDataSet.circleHoleColor = (UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.8))
+        lineChartDataSet.circleHoleColor = (UIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 0.8))
         
     }
     

@@ -719,7 +719,7 @@ public class PieRadarChartViewBase: ChartViewBase
         {
             var location = recognizer.locationInView(self)
             var distance = distanceToCenter(x: location.x, y: location.y)
-            
+
             // check if a slice was touched
             if (distance > self.radius)
             {

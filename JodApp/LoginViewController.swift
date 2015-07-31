@@ -26,26 +26,26 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
-            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                if(tutor == false){
-                    println("Aluno no ViewWillAppear")
-                    self.performSegueWithIdentifier("aluno", sender: self)
-                }
-                else{
-                    println("Tutor no ViewWillAppear")
-                    self.performSegueWithIdentifier("tutor", sender: self)
-                }
-            })
-            
-        }
+//        if let tutor = PFUser.currentUser()?.objectForKey("tutor") as? Bool{
+//            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+//                if(tutor == false){
+//                    println("Aluno no ViewWillAppear")
+//                    self.performSegueWithIdentifier("aluno", sender: self)
+//                }
+//                else{
+//                    println("Tutor no ViewWillAppear")
+//                    self.performSegueWithIdentifier("tutor", sender: self)
+//                }
+//            })
+//            
+//        }
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//       PFUser.logOut()
+       PFUser.logOut()
         
         println(PFUser.currentUser())
         
