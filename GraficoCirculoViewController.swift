@@ -91,6 +91,7 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
             var pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Study Time")
 //            Setting Color of Graphics
             pieChartDataSet.colors = color
+            pieChartDataSet.highlightEnabled = false
             pieChartData.append(PieChartData(xVals: dataPoints, dataSet: pieChartDataSet))
         }
         return pieChartData

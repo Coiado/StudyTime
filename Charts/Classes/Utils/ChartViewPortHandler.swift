@@ -215,7 +215,7 @@ public class ChartViewPortHandler: NSObject
         
         // min scale-y is 1
         _scaleY = max(_minScaleY, matrix.d)
-        
+    // Valores do grafico
         var width: CGFloat = 0.0
         var height: CGFloat = 0.0
         

@@ -316,7 +316,7 @@ public class PieRadarChartViewBase: ChartViewBase
     public var diameter: CGFloat
     {
         var content = _viewPortHandler.contentRect
-        return min(content.width, content.height)
+        return 0.02
     }
 
     /// Returns the radius of the chart in pixels.
@@ -719,7 +719,7 @@ public class PieRadarChartViewBase: ChartViewBase
         {
             var location = recognizer.locationInView(self)
             var distance = distanceToCenter(x: location.x, y: location.y)
-            
+// ---------------------------------------------------------------------------
             // check if a slice was touched
             if (distance > self.radius)
             {
