@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085C44561B6A934600E76F13 /* TutorNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C44551B6A934600E76F13 /* TutorNavigation.swift */; };
 		08737D361B60163C001AB80D /* images-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 08737D351B60163C001AB80D /* images-2.png */; };
 		08BE0C071B540779006BB2DC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; };
 		08BE0C081B540779006BB2DC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE0C061B540696006BB2DC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -95,6 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		085C44551B6A934600E76F13 /* TutorNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorNavigation.swift; sourceTree = "<group>"; };
 		08737D351B60163C001AB80D /* images-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images-2.png"; sourceTree = "<group>"; };
 		08BE0C011B540696006BB2DC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
+				085C44551B6A934600E76F13 /* TutorNavigation.swift */,
 				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
 				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
 				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
@@ -443,6 +446,7 @@
 			files = (
 				5F9F8AB91B56C770007A41E6 /* TransitionManager.swift in Sources */,
 				08BE0C0E1B541E08006BB2DC /* MateriaTeste1ViewController.swift in Sources */,
+				085C44561B6A934600E76F13 /* TutorNavigation.swift in Sources */,
 				3FE70C0E1B4D487E00BFD1DC /* LoginViewController.swift in Sources */,
 				3FE332951B581DE900908CBE /* GraphicsCollectionViewCell.swift in Sources */,
 				3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */,
