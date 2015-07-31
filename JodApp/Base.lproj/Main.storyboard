@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BNY-R7-pbb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iOV-ss-zUr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -540,7 +540,7 @@
                                     <outlet property="delegate" destination="iOV-ss-zUr" id="BP2-ee-0VJ"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-FO-7ea">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-FO-7ea">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4nT-2E-dLg">
@@ -572,6 +572,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54Q-z1-q97">
+                                <rect key="frame" x="182" y="391" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1ES-za-8Qy" kind="presentation" id="cbz-UU-e4b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93081759689999999" green="0.93081759689999999" blue="0.93081759689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -593,7 +602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Oq-lR-5ux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="1961"/>
+            <point key="canvasLocation" x="-857" y="1945"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="Vfv-HZ-YDB">
@@ -608,10 +617,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPs-m2-dcn">
-                                <rect key="frame" x="110" y="57" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="110" y="57" width="100" height="30"/>
+                                <state key="normal" title="Grafico Meses">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="iOV-ss-zUr" kind="show" id="5dP-tA-cio"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbs-RS-bLN">
                                 <rect key="frame" x="110" y="188" width="46" height="30"/>
@@ -816,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBe-0K-Yoh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-643" y="1965"/>
+            <point key="canvasLocation" x="117" y="1945"/>
         </scene>
         <!--Tutor Navigation-->
         <scene sceneID="1L4-aQ-QIk">
@@ -845,8 +857,8 @@
         <image name="unchecked_checkbox.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DSe-Yn-CXV"/>
         <segue reference="NHq-5t-Xgo"/>
         <segue reference="DSe-Yn-CXV"/>
+        <segue reference="cbz-UU-e4b"/>
     </inferredMetricsTieBreakers>
 </document>
