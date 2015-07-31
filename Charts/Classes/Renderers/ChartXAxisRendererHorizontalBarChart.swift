@@ -17,6 +17,7 @@ import UIKit
 
 public class ChartXAxisRendererHorizontalBarChart: ChartXAxisRendererBarChart
 {
+    
     public override init(viewPortHandler: ChartViewPortHandler, xAxis: ChartXAxis, transformer: ChartTransformer!, chart: BarChartView)
     {
         super.init(viewPortHandler: viewPortHandler, xAxis: xAxis, transformer: transformer, chart: chart)
@@ -152,7 +153,7 @@ public class ChartXAxisRendererHorizontalBarChart: ChartXAxisRendererBarChart
         CGContextRestoreGState(context)
     }
     
-    private var _axisLineSegmentsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
+    public var axisLineSegmentsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     public override func renderAxisLine(#context: CGContext)
     {
@@ -178,22 +179,22 @@ public class ChartXAxisRendererHorizontalBarChart: ChartXAxisRendererBarChart
             || _xAxis.labelPosition == .TopInside
             || _xAxis.labelPosition == .BothSided)
         {
-            _axisLineSegmentsBuffer[0].x = viewPortHandler.contentRight
-            _axisLineSegmentsBuffer[0].y = viewPortHandler.contentTop
-            _axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight
-            _axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
-            CGContextStrokeLineSegments(context, _axisLineSegmentsBuffer, 2)
+            axisLineSegmentsBuffer[0].x = viewPortHandler.contentRight
+            axisLineSegmentsBuffer[0].y = viewPortHandler.contentTop
+            axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight
+            axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
+            CGContextStrokeLineSegments(context, axisLineSegmentsBuffer, 2)
         }
         
         if (_xAxis.labelPosition == .Bottom
             || _xAxis.labelPosition == .BottomInside
             || _xAxis.labelPosition == .BothSided)
         {
-            _axisLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
-            _axisLineSegmentsBuffer[0].y = viewPortHandler.contentTop
-            _axisLineSegmentsBuffer[1].x = viewPortHandler.contentLeft
-            _axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
-            CGContextStrokeLineSegments(context, _axisLineSegmentsBuffer, 2)
+            axisLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
+            axisLineSegmentsBuffer[0].y = viewPortHandler.contentTop
+            axisLineSegmentsBuffer[1].x = viewPortHandler.contentLeft
+            axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
+            CGContextStrokeLineSegments(context, axisLineSegmentsBuffer, 2)
         }
         
         CGContextRestoreGState(context)

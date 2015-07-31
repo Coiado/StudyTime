@@ -76,7 +76,7 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
         }
     }
     
-    private var _axisLineSegmentsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
+    public var _axisLineSegmentsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     public override func renderAxisLine(#context: CGContext)
     {

@@ -38,6 +38,10 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
     
     public var borderColor = UIColor.blackColor()
     public var borderLineWidth: CGFloat = 1.0
+    public var axisLineColor = UIColor.grayColor()
+    public var axisLineWidth = CGFloat(0.5)
+    public var axisLineDashPhase = CGFloat(0.0)
+    public var axisLineDashLengths: [CGFloat]!
     
     /// flag indicating if the grid background should be drawn or not
     public var drawGridBackgroundEnabled = true
@@ -47,11 +51,11 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
     
     /// the object representing the labels on the y-axis, this object is prepared
     /// in the pepareYLabels() method
-    internal var _leftAxis: ChartYAxis!
-    internal var _rightAxis: ChartYAxis!
+    public var _leftAxis: ChartYAxis!
+    public var _rightAxis: ChartYAxis!
     
     /// the object representing the labels on the x-axis
-    internal var _xAxis: ChartXAxis!
+    public var _xAxis: ChartXAxis!
 
     internal var _leftYAxisRenderer: ChartYAxisRenderer!
     internal var _rightYAxisRenderer: ChartYAxisRenderer!
@@ -60,6 +64,8 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
     internal var _rightAxisTransformer: ChartTransformer!
     
     internal var _xAxisRenderer: ChartXAxisRenderer!
+    
+    private var _axisLineSegmentsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     private var _tapGestureRecognizer: UITapGestureRecognizer!
     private var _doubleTapGestureRecognizer: UITapGestureRecognizer!
@@ -118,6 +124,52 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
         _doubleTapGestureRecognizer.enabled = _doubleTapToZoomEnabled
         _pinchGestureRecognizer.enabled = _pinchZoomEnabled || _scaleXEnabled || _scaleYEnabled
         _panGestureRecognizer.enabled = _dragEnabled
+    }
+    
+    public func renderAxisLine(#context: CGContext)
+    {
+        if (!_xAxis.isEnabled || !_xAxis.isDrawAxisLineEnabled)
+        {
+            return
+        }
+        
+        CGContextSaveGState(context)
+        
+        
+        CGContextSetStrokeColorWithColor(context, axisLineColor.CGColor)
+        CGContextSetLineWidth(context, axisLineWidth)
+        if (axisLineDashLengths != nil)
+        {
+            CGContextSetLineDash(context, axisLineDashPhase, axisLineDashLengths, _xAxis.axisLineDashLengths.count)
+        }
+        else
+        {
+            CGContextSetLineDash(context, 0.0, nil, 0)
+        }
+        
+        if (_xAxis.labelPosition == .Top
+            || _xAxis.labelPosition == .TopInside
+            || _xAxis.labelPosition == .BothSided)
+        {
+            _axisLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
+            _axisLineSegmentsBuffer[0].y = viewPortHandler.contentTop
+            _axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight
+            _axisLineSegmentsBuffer[1].y = viewPortHandler.contentTop
+            CGContextStrokeLineSegments(context, _axisLineSegmentsBuffer, 2)
+        }
+        
+        if (_xAxis.labelPosition == .Bottom
+            || _xAxis.labelPosition == .BottomInside
+            || _xAxis.labelPosition == .BothSided)
+        {
+            _axisLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
+            _axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom
+            _axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight
+            _axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
+            CGContextStrokeLineSegments(context, _axisLineSegmentsBuffer, 2)
+        }
+        
+        CGContextRestoreGState(context)
     }
     
     public override func drawRect(rect: CGRect)
