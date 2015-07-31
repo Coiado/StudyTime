@@ -13,7 +13,7 @@ import Parse
 class ChronometerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     
-    let transitionManager = TransitionManager()
+    let transitionManager = PanTransition()
     
     var day:Int = Int()
     var month:Int = Int()

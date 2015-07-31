@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate, UIViewControllerInteractiveTransitioning {
+class PanTransition: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate, UIViewControllerInteractiveTransitioning {
     
     private var presenting = false
     private var interactive = false
@@ -216,3 +216,129 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     
     
 }
+
+
+class ButtonTransition: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+    
+    var presenting: Bool = false
+    
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        return 0.5
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.presenting = false
+        return self
+    }
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.presenting = true
+        return self
+    }
+    
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        
+        let containerView = transitionContext.containerView()
+        
+        let screens: (from: UIViewController, to: UIViewController) = (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!, transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!)
+        
+        let optionsViewController = !self.presenting ? screens.from as! OptionsViewController : screens.to
+         as! OptionsViewController
+        let bottomViewController = !self.presenting ? screens.to as UIViewController : screens.from as UIViewController
+        
+        
+        let optionsView = optionsViewController.view
+        let bottomView = bottomViewController.view
+        
+        if self.presenting {
+            self.offStage(optionsViewController)
+        }
+        
+        
+        containerView.addSubview(bottomView)
+        containerView.addSubview(optionsView)
+        
+        
+        let duration = self.transitionDuration(transitionContext)
+        
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1.2, options: nil, animations: {
+            
+            if self.presenting{
+                self.onStage(optionsViewController)
+            }
+            else
+            {
+                self.offStage (optionsViewController)
+            }
+            
+            }, completion: { finished in
+                
+                transitionContext.completeTransition(true)
+                
+                UIApplication.sharedApplication().keyWindow!.addSubview(screens.to.view)
+        
+        })
+        
+    }
+    
+    func setupStage(amount: CGFloat) -> CGAffineTransform{
+        return CGAffineTransformMakeTranslation(0, amount)
+    }
+    
+    
+    func offStage (optionViewController: OptionsViewController){
+        
+        optionViewController.view.alpha = 0
+        
+        let firstRow = 600 as CGFloat
+        let secondRow = 550 as CGFloat
+        let thirdRow = 500 as CGFloat
+        let fourthRow = 450 as CGFloat
+        let fifthRow = 400 as CGFloat
+        
+        
+        optionViewController.teste1.transform = self.setupStage(-firstRow)
+        optionViewController.teste2.transform = self.setupStage(-secondRow)
+        optionViewController.teste3.transform = self.setupStage(-thirdRow)
+        optionViewController.teste4.transform = self.setupStage(-fourthRow)
+        optionViewController.teste5.transform = self.setupStage(-fifthRow)
+        
+        optionViewController.teste6.transform = self.setupStage(firstRow)
+        optionViewController.teste7.transform = self.setupStage(secondRow)
+        optionViewController.teste8.transform = self.setupStage(thirdRow)
+        optionViewController.teste9.transform = self.setupStage(fourthRow)
+        optionViewController.teste10.transform = self.setupStage(fifthRow)
+
+        
+        
+    }
+    
+    func onStage (optionViewController : OptionsViewController){
+        
+        optionViewController.view.alpha = 1
+        
+        optionViewController.teste1.transform = CGAffineTransformIdentity
+        optionViewController.teste2.transform = CGAffineTransformIdentity
+        optionViewController.teste3.transform = CGAffineTransformIdentity
+        optionViewController.teste4.transform = CGAffineTransformIdentity
+        optionViewController.teste5.transform = CGAffineTransformIdentity
+        optionViewController.teste6.transform = CGAffineTransformIdentity
+        optionViewController.teste7.transform = CGAffineTransformIdentity
+        optionViewController.teste8.transform = CGAffineTransformIdentity
+        optionViewController.teste9.transform = CGAffineTransformIdentity
+        optionViewController.teste10.transform = CGAffineTransformIdentity
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

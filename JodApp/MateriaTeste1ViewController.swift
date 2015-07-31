@@ -19,7 +19,6 @@ class MateriaTeste1ViewController: UIViewController {
 //  var y  : ChartAxisBase
 //    var x  : BarLineChartViewBase
 
-    let transitionManager = TransitionManager()
     
     @IBOutlet weak var currentLineChartView: LineChartView!
     @IBOutlet weak var pastLineChartView: LineChartView!
@@ -45,8 +44,6 @@ class MateriaTeste1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.transitionManager.sourceViewController = self
-
 //        setChart(days, currentValues: currentTimeStudied, pastValues: pastTimeStudied1)
 //        currentLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
 //        pastLineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: ChartEasingOption.Linear)
@@ -541,20 +538,11 @@ class MateriaTeste1ViewController: UIViewController {
         
     }
     
-    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
-
+    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
+        // bug? exit segue doesn't dismiss so we do it manually...
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        // set transition delegate for our menu view controller
-        let menu = segue.destinationViewController as! MenuViewController
-        menu.transitioningDelegate = self.transitionManager
-        self.transitionManager.menuViewController = menu
-        
-    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
