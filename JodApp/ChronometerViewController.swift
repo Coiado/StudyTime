@@ -189,6 +189,10 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell : SubjectsCollectionCells = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubjectsCollectionCells
         cell.subjectsLabel.text = subjects[indexPath.row]
         cell.backgroundColor = self.color[indexPath.row]
+        
+        cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y
+            , width: self.view.frame.width * 0.27, height: self.view.frame.height*0.1)
+        
         return cell
     
     }
@@ -279,7 +283,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         
         imageView.frame = self.tutorialView.bounds
         
-        self.tutorialView.addSubview(imageView)
+        //self.tutorialView.addSubview(imageView)
         
 
         
