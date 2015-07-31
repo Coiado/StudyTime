@@ -236,6 +236,7 @@
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
+				085C44551B6A934600E76F13 /* TutorNavigation.swift */,
 				5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */,
 				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
 				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
