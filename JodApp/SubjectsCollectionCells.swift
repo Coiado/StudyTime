@@ -14,7 +14,6 @@ class SubjectsCollectionCells: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = true
         self.layer.borderColor = UIColor.blackColor().CGColor!

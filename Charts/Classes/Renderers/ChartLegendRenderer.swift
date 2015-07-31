@@ -165,7 +165,7 @@ public class ChartLegendRenderer: ChartRendererBase
             }
             else // if (legendPosition == .BelowChartCenter)
             {
-                originPosX = viewPortHandler.contentLeft + contentWidth / 2.0
+                originPosX = viewPortHandler.contentLeft + contentWidth / 4.0
             }
             
             var calculatedLineSizes = _legend.calculatedLineSizes
