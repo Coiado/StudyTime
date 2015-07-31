@@ -224,7 +224,7 @@ class ButtonTransition: NSObject, UIViewControllerAnimatedTransitioning, UIViewC
     
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 0.5
+        return 1.0
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -263,7 +263,7 @@ class ButtonTransition: NSObject, UIViewControllerAnimatedTransitioning, UIViewC
         
         let duration = self.transitionDuration(transitionContext)
         
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1.2, options: nil, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 2.0, options: nil, animations: {
             
             if self.presenting{
                 self.onStage(optionsViewController)
