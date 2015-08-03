@@ -12,6 +12,7 @@ import ParseUI
 
 class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate
 {
+
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var cadastroLabel: UILabel!
     
@@ -22,7 +23,6 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     @IBOutlet weak var passwordTextField: UITextField!
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 150, 150)) as UIActivityIndicatorView
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,8 +44,9 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       PFUser.logOut()
+        var tap: UITapGestureRecognizer  = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+        PFUser.logOut()
         
         println(PFUser.currentUser())
         
@@ -165,7 +166,10 @@ class logInViewController: UIViewController, PFSignUpViewControllerDelegate, PFL
         
     }
     
-    
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
 }
 
