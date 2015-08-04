@@ -97,27 +97,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		085C44551B6A934600E76F13 /* TutorNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorNavigation.swift; sourceTree = "<group>"; };
+		085C44551B6A934600E76F13 /* TutorNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorNavigation.swift; path = JodApp/TutorNavigation.swift; sourceTree = "<group>"; };
 		08737D351B60163C001AB80D /* images-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images-2.png"; sourceTree = "<group>"; };
 		08BE0C011B540696006BB2DC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
-		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
+		08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MateriaTeste1ViewController.swift; path = JodApp/MateriaTeste1ViewController.swift; sourceTree = "<group>"; };
 		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
 		08BE0C101B542138006BB2DC /* setaEsq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaEsq.jpg; sourceTree = "<group>"; };
-		08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsCollectionCells.swift; sourceTree = "<group>"; };
+		08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectsCollectionCells.swift; path = JodApp/SubjectsCollectionCells.swift; sourceTree = "<group>"; };
 		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F4203F51B46E96F00AB519D /* JodApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JodApp.xcdatamodel; sourceTree = "<group>"; };
-		3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronometerViewController.swift; sourceTree = "<group>"; };
+		3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChronometerViewController.swift; path = JodApp/ChronometerViewController.swift; sourceTree = "<group>"; };
 		3F4203FA1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F4203FC1B46E96F00AB519D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F4203FF1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F4204051B46E96F00AB519D /* JodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F42040B1B46E96F00AB519D /* JodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodAppTests.swift; sourceTree = "<group>"; };
-		3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionView.swift; sourceTree = "<group>"; };
-		3FE304071B5EC6BE008544CD /* HSStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSStudent.swift; sourceTree = "<group>"; };
-		3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraficoCirculoViewController.swift; path = ../GraficoCirculoViewController.swift; sourceTree = "<group>"; };
-		3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicsCollectionViewCell.swift; path = ../GraphicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonsCollectionView.swift; path = JodApp/ButtonsCollectionView.swift; sourceTree = "<group>"; };
+		3FE304071B5EC6BE008544CD /* HSStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSStudent.swift; path = JodApp/HSStudent.swift; sourceTree = "<group>"; };
+		3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficoCirculoViewController.swift; sourceTree = "<group>"; };
+		3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FE70BF51B4D46C100BFD1DC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3FE70BF71B4D46C900BFD1DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3FE70BF91B4D472500BFD1DC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -130,15 +130,15 @@
 		3FE70C071B4D477800BFD1DC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3FE70C091B4D478400BFD1DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3FE70C0B1B4D478F00BFD1DC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = JodApp/LoginViewController.swift; sourceTree = "<group>"; };
 		3FE70C101B4D48FD00BFD1DC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		3FE70C111B4D48FD00BFD1DC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3FE70C121B4D48FD00BFD1DC /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
+		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = JodApp/SignInViewController.swift; sourceTree = "<group>"; };
+		5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = optionsViewController.swift; path = JodApp/optionsViewController.swift; sourceTree = "<group>"; };
 		5F5FC2491B694B420097EEBB /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
 		5F96AF591B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		5F96AF5A1B54319F008F3B89 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -148,8 +148,8 @@
 		5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 		5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
 		5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
-		5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorTableViewController.swift; path = ../TutorTableViewController.swift; sourceTree = "<group>"; };
+		5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = JodApp/MenuViewController.swift; sourceTree = "<group>"; };
+		5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +213,9 @@
 		3F4203E41B46E96F00AB519D = {
 			isa = PBXGroup;
 			children = (
+				3FEA98451B70E3D2004B1475 /* Model */,
+				3FEA98461B70E3DE004B1475 /* View */,
+				3FEA98471B70E3E8004B1475 /* Controller */,
 				5F96AF6C1B543EB6008F3B89 /* Framework */,
 				3F4203EF1B46E96F00AB519D /* JodApp */,
 				3F4204081B46E96F00AB519D /* JodAppTests */,
@@ -232,21 +235,8 @@
 		3F4203EF1B46E96F00AB519D /* JodApp */ = {
 			isa = PBXGroup;
 			children = (
-				3FE304071B5EC6BE008544CD /* HSStudent.swift */,
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
-				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
-				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
-				085C44551B6A934600E76F13 /* TutorNavigation.swift */,
-				5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */,
 				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
-				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
-				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
-				08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */,
-				3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */,
-				3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */,
-				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
-				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
-				3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
 				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
 				3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */,
@@ -297,6 +287,40 @@
 			);
 			name = "parse-library-1";
 			path = "JodApp/parse-library-1";
+			sourceTree = "<group>";
+		};
+		3FEA98451B70E3D2004B1475 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FE304071B5EC6BE008544CD /* HSStudent.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3FEA98461B70E3DE004B1475 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				085C44551B6A934600E76F13 /* TutorNavigation.swift */,
+				3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */,
+				3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */,
+				08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3FEA98471B70E3E8004B1475 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
+				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
+				5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */,
+				3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */,
+				08BE0C0D1B541E08006BB2DC /* MateriaTeste1ViewController.swift */,
+				5F226F711B4D6BFA0063B326 /* SignInViewController.swift */,
+				5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */,
+				3FE332901B58099400908CBE /* GraficoCirculoViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		5F96AF6C1B543EB6008F3B89 /* Framework */ = {
