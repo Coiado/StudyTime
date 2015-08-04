@@ -147,7 +147,7 @@
 		5F96AF6A1B543DCE008F3B89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 		5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
-		5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = JodApp/TransitionManager.swift; sourceTree = "<group>"; };
 		5F9F8ABB1B56CFB0007A41E6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = JodApp/MenuViewController.swift; sourceTree = "<group>"; };
 		5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
-				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
 				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
 				3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */,
@@ -304,6 +303,7 @@
 				3FE332941B581DE900908CBE /* GraphicsCollectionViewCell.swift */,
 				3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */,
 				08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */,
+				5F9F8AB81B56C770007A41E6 /* TransitionManager.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
