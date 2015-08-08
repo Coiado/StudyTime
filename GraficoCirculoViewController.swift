@@ -10,9 +10,8 @@ import UIKit
 import Charts
 
 
-class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class GraficoCirculoViewController: UIViewController{
 
-    @IBOutlet weak var graph: PieChartView!
     var student = HSStudent()
     var color = [UIColor(red: 202/255, green: 25/255, blue: 19/255, alpha: 1),   //Math
                  UIColor(red: 208/255, green: 182/255, blue: 14/255, alpha: 1),  //English
@@ -24,8 +23,11 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
                  UIColor(red: 84/255, green: 93/255, blue: 106/255, alpha: 1),   //History
                  UIColor(red: 37/255, green: 126/255, blue: 129/255, alpha: 1)]  //Writing
     var monthToday : Int!
-
+    var pieChartData : [PieChartData] = []
+    var currentGraphic : Int = 1
     
+  
+    @IBOutlet weak var pieChartView: PieChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,8 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
         day.dateFormat = "MM"
         self.monthToday = day.stringFromDate(today).toInt()!
         setMonth()
-        setChart(student.subjects, values: student.studyTime)
+        self.pieChartData =  setChart(student.subjects, values: student.studyTime)
+        self.pieChartView.data = self.pieChartData[self.currentGraphic]
         // Do any additional setup after loading the view.
     }
 
@@ -43,27 +46,20 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    // Setting Collection View number of items
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return student.months.count
+    @IBAction func leftChart(sender: AnyObject) {
+        if self.currentGraphic > 0{
+            self.currentGraphic--
+            self.pieChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.3)
+            self.pieChartView.data = self.pieChartData[self.currentGraphic]
+        }
     }
     
-    //Setting Collection View
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let section = indexPath.section
-        let cell : GraphicsCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Grafico", forIndexPath: indexPath) as! GraphicsCollectionViewCell
-            //Setting Graphics Collection View
-        let rect  = cell.grafico.frame
-        
-        cell.grafico.data = setChart(student.subjects, values: student.studyTime)[indexPath.row]
-        
-        cell.grafico.frame = CGRectMake(0, 0, 100, 100)
-        
-        //Setting Label Graphics in Collection View
-        cell.mes.text = student.months[indexPath.row]
-        return cell
-        
+    @IBAction func rightChart(sender: AnyObject) {
+        if self.currentGraphic < self.pieChartData.count{
+            self.currentGraphic++
+            self.pieChartView.data = self.pieChartData[self.currentGraphic]
+            self.pieChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.3)
+        }
     }
     
     func setChart(dataPoints: [String], values: [[Double]]) -> [PieChartData] {
@@ -98,6 +94,9 @@ class GraficoCirculoViewController: UIViewController, UICollectionViewDelegate, 
             fallthrough
         case 8..<12:
             student.months.append(NSLocalizedString("September", comment: "label do grafico de meses"))
+            fallthrough
+        case 7..<12:
+            student.months.append(NSLocalizedString("August", comment: "label do grafico de meses"))
             fallthrough
         case 6..<12:
             student.months.append(NSLocalizedString("July", comment: "label do grafico de meses"))

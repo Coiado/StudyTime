@@ -66,10 +66,10 @@ public class ChartLegend: ChartComponentBase
     /// :default: false (automatic legend)
     private var _isLegendCustom = false
 
-    public var position = ChartLegendPosition.BelowChartLeft
+    public var position = ChartLegendPosition.LeftOfChartInside
     public var direction = ChartLegendDirection.LeftToRight
 
-    public var font: UIFont = UIFont.systemFontOfSize(10.0)
+    public var font: UIFont = UIFont.systemFontOfSize(8.0)
     public var textColor = UIColor.blackColor()
 
     public var form = ChartLegendForm.Square
@@ -84,7 +84,7 @@ public class ChartLegend: ChartComponentBase
     /// Sets the x offset fo the legend.
     /// Higher offset means the legend as a whole will be placed further away from the left/right.
     /// Positive value will move the legend to the right when LTR, and to the left when RTL.
-    public var xOffset = CGFloat(5.0)
+    public var xOffset = CGFloat(2.0)
     
     /// Sets the y offset fo the legend.
     /// Higher offset means the legend as a whole will be placed further away from the top.

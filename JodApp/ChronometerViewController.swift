@@ -15,6 +15,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
     
     let transitionManager = PanTransition()
     
+    var sectionInsets = UIEdgeInsets(top: 0.0, left:0.0, bottom: 0.0, right: 0.0)
     var day:Int = Int()
     var month:Int = Int()
     var year:Int = Int()
@@ -56,14 +57,14 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         // Do any additional setup after loading the view, typically from a nib.
         self.transitionManager.sourceViewController = self
         
+        self.sectionInsets = UIEdgeInsets(top: 0.0, left: self.view.frame.width*0.056, bottom: 0, right: self.view.frame.width*0.1)
         
-        
-        subjects = ["Math", "English", "Geography", "Physics" , "Biology", "Portuguese", "Chemistry", "History", "Writing"]
+        subjects = ["Matematica", "Inglês", "Geografia", "Física" , "Biologia", "Português", "Química", "História", "Redação"]
         
         color = [UIColor(red: 202/255, green: 25/255, blue: 19/255, alpha: 1),   //Math
                 UIColor(red: 208/255, green: 182/255, blue: 14/255, alpha: 1),   //English
                 UIColor(red: 210/255, green: 127/255, blue: 32/255, alpha: 1),  //Geography
-                UIColor(red: 53/255, green: 89/255, blue: 188/255, alpha: 1),        //Physics
+                UIColor(red: 53/255, green: 89/255, blue: 188/255, alpha: 1),   //Physics
                 UIColor(red: 75/255, green: 164/255, blue: 80/255, alpha: 1),   //Biology
                 UIColor(red: 158/255, green: 41/255, blue: 11/255, alpha: 1),   //Portuguese
                 UIColor(red: 139/255, green: 1/255, blue: 198/255, alpha: 1),  //Chemistry
@@ -176,6 +177,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         
     }
 
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subjects.count
     }
@@ -191,7 +193,7 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         cell.backgroundColor = self.color[indexPath.row]
         
         cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y
-            , width: self.view.frame.width * 0.27, height: self.view.frame.height*0.1)
+            , width: self.view.frame.width * 0.277, height: self.view.frame.height*0.07)
         
         return cell
     
@@ -215,6 +217,12 @@ class ChronometerViewController: UIViewController, UICollectionViewDelegate, UIC
         println("Botao \(indexPath.row) \(self.currentSubject)selecionado") // Separar matéria aqui (onde vai salvar os dados de tempo do estudo)
     }
 
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         if !self.started{

@@ -53,8 +53,8 @@ public class PieRadarChartViewBase: ChartViewBase
         
         _tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("tapGestureRecognized:"))
         _rotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: Selector("rotationGestureRecognized:"))
-        
-        self.addGestureRecognizer(_tapGestureRecognizer)
+//        
+//        self.addGestureRecognizer(_tapGestureRecognizer)
         self.addGestureRecognizer(_rotationGestureRecognizer)
         
         _rotationGestureRecognizer.enabled = rotationWithTwoFingers

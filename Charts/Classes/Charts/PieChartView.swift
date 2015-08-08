@@ -85,10 +85,10 @@ public class PieChartView: PieRadarChartViewBase
         var c = centerOffsets
         
         // create the circle box that will contain the pie-chart (the bounds of the pie-chart)
-        _circleBox.origin.x = c.x - radius
-        _circleBox.origin.y = c.y - radius
-        _circleBox.size.width = radius * 2.0
-        _circleBox.size.height = radius * 2.0
+        _circleBox.origin.x = c.x - radius*0.5
+        _circleBox.origin.y = c.y - radius*0.5
+        _circleBox.size.width = radius * 1.6
+        _circleBox.size.height = radius * 1.6
     }
     
     internal override func calcMinMax()

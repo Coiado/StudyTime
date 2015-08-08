@@ -13,7 +13,7 @@ import Charts
 class HSStudent{
     var months : [String] = []
     var graphMonths : [PieChartView] = []
-    var subjects : [String] = ["Math\n", "English\n", "Geography\n", "Physics" , "Biology", "Portuguese", "Chemistry", "History", "Writing"]
+    var subjects : [String] = ["Matematica", "Inglês", "Geografia", "Física" , "Biologia", "Português", "Química", "História", "Redação"]
     var studyTimeJan : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
     var studyTimeFev : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
     var studyTimeMar : [Double] = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]

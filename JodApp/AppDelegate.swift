@@ -14,15 +14,17 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let themeColor = UIColor(red: 232/255, green: 233/255, blue: 232/255, alpha: 1.0)
 
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         // Initialize Parse.
         Parse.setApplicationId("z2ZtVDkiMBVX9h8GBD0EbhfNtVHGWTX6SyID4txa",
             clientKey: "dbeYJLoZY3to1BM6gbX3DR7GxlH8q4HnaTUUkWJS")
-        
+        window?.tintColor = themeColor
         return true
     }
 

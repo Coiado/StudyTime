@@ -9,5 +9,7 @@
 import UIKit
 
 class ButtonsCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var buttons: UILabel!
+    
 }
