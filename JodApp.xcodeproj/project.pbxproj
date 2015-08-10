@@ -15,6 +15,7 @@
 		08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C0F1B542138006BB2DC /* setaDir.jpg */; };
 		08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C101B542138006BB2DC /* setaEsq.jpg */; };
 		08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */; };
+		3F00B67E1B790A3D00A9491D /* HourGoalVollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */; };
 		3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F21B46E96F00AB519D /* AppDelegate.swift */; };
 		3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */; };
 		3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */; };
@@ -45,6 +46,7 @@
 		3FE70C191B4D498C00BFD1DC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C121B4D48FD00BFD1DC /* ParseCrashReporting.framework */; };
 		3FE70C1A1B4D498C00BFD1DC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */; };
 		3FE70C1B1B4D498C00BFD1DC /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */; };
+		3FEA984D1B75A393004B1475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA984C1B75A393004B1475 /* ViewController.swift */; };
 		5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F226F711B4D6BFA0063B326 /* SignInViewController.swift */; };
 		5F2F85D61B6BB0DE00F2994D /* optionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */; };
 		5F5FC24A1B694B420097EEBB /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5FC2491B694B420097EEBB /* tutorial.png */; };
@@ -104,6 +106,7 @@
 		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
 		08BE0C101B542138006BB2DC /* setaEsq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaEsq.jpg; sourceTree = "<group>"; };
 		08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectsCollectionCells.swift; path = JodApp/SubjectsCollectionCells.swift; sourceTree = "<group>"; };
+		3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourGoalVollectionViewCell.swift; sourceTree = "<group>"; };
 		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		3FE70C131B4D48FD00BFD1DC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		3FE70C141B4D48FD00BFD1DC /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3FE70C151B4D48FD00BFD1DC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		3FEA984C1B75A393004B1475 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F226F711B4D6BFA0063B326 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = JodApp/SignInViewController.swift; sourceTree = "<group>"; };
 		5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = optionsViewController.swift; path = JodApp/optionsViewController.swift; sourceTree = "<group>"; };
 		5F5FC2491B694B420097EEBB /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		3F4203E41B46E96F00AB519D = {
 			isa = PBXGroup;
 			children = (
+				3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */,
 				3FEA98451B70E3D2004B1475 /* Model */,
 				3FEA98461B70E3DE004B1475 /* View */,
 				3FEA98471B70E3E8004B1475 /* Controller */,
@@ -311,6 +316,7 @@
 		3FEA98471B70E3E8004B1475 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3FEA984C1B75A393004B1475 /* ViewController.swift */,
 				5FA1ADF01B59394200E76358 /* TutorTableViewController.swift */,
 				3FE70C0D1B4D487E00BFD1DC /* LoginViewController.swift */,
 				5F2F85D51B6BB0DE00F2994D /* optionsViewController.swift */,
@@ -480,10 +486,12 @@
 				3FE304081B5EC6BE008544CD /* HSStudent.swift in Sources */,
 				5F9F8ABC1B56CFB0007A41E6 /* MenuViewController.swift in Sources */,
 				5F2F85D61B6BB0DE00F2994D /* optionsViewController.swift in Sources */,
+				3FEA984D1B75A393004B1475 /* ViewController.swift in Sources */,
 				5FA1ADF11B59394200E76358 /* TutorTableViewController.swift in Sources */,
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */,
+				3F00B67E1B790A3D00A9491D /* HourGoalVollectionViewCell.swift in Sources */,
 				3FE332911B58099400908CBE /* GraficoCirculoViewController.swift in Sources */,
 				3F5156331B6953AD00461993 /* ButtonsCollectionView.swift in Sources */,
 				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
