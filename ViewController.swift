@@ -8,17 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     var student : HSStudent = HSStudent()
     var subjects : [UILabel] = []
-
+    var hour : [UITextField] = []
+    var buttonsDown : [UIButton] = []
+    var buttonsUp : [UIButton] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        subjects = populateLabels(student.subjects)
-        for index in 0...self.student.subjects.count-1{
-            self.view.addSubview(subjects[index])
-        }
+        popu
         // Do any additional setup after loading the view.
     }
 
@@ -27,24 +27,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func populateLabels(subject:[String]) -> [UILabel]{
-        var labels : [UILabel] = []
-        var pointx : CGFloat = 50.0
-        var pointy : CGFloat = 50.0
-        for index in 0...subject.count-1{
-            var label = UILabel(frame: CGRectMake(0, 0, 100, 21))
-            label.center = CGPointMake(pointx, pointy)
-            label.textAlignment = NSTextAlignment.Center
-            label.text = subject[index]
-            pointx = pointx + 100.0
-            if pointx > self.view.frame.width-50.0{
-                pointx = 50.0
-                pointy = pointy + 20.0
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        var result = true
+        
+        if textField ==  {
+            if count(string) > 0 {
+                let disallowedCharacterSet = NSCharacterSet(charactersInString: "0123456789.-").invertedSet
+                let replacementStringIsLegal = string.rangeOfCharacterFromSet(disallowedCharacterSet) == nil
+                result = replacementStringIsLegal
             }
-            labels.append(label)
         }
-        return labels
+        
+        return result
     }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -15,12 +15,12 @@
 		08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C0F1B542138006BB2DC /* setaDir.jpg */; };
 		08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BE0C101B542138006BB2DC /* setaEsq.jpg */; };
 		08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */; };
-		3F00B67E1B790A3D00A9491D /* HourGoalVollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */; };
+		3F00B6821B79393B00A9491D /* downbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F00B6811B79393B00A9491D /* downbutton.png */; };
+		3F00B6841B7939F400A9491D /* up-arrow-circle-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F00B6831B7939F400A9491D /* up-arrow-circle-hi.png */; };
 		3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F21B46E96F00AB519D /* AppDelegate.swift */; };
 		3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */; };
 		3F4203F81B46E96F00AB519D /* ChronometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */; };
 		3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203F91B46E96F00AB519D /* Main.storyboard */; };
-		3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FC1B46E96F00AB519D /* Images.xcassets */; };
 		3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */; };
 		3F42040C1B46E96F00AB519D /* JodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42040B1B46E96F00AB519D /* JodAppTests.swift */; };
 		3F5156331B6953AD00461993 /* ButtonsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5156321B6953AD00461993 /* ButtonsCollectionView.swift */; };
@@ -106,14 +106,14 @@
 		08BE0C0F1B542138006BB2DC /* setaDir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaDir.jpg; sourceTree = "<group>"; };
 		08BE0C101B542138006BB2DC /* setaEsq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setaEsq.jpg; sourceTree = "<group>"; };
 		08BE0C151B56D276006BB2DC /* SubjectsCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubjectsCollectionCells.swift; path = JodApp/SubjectsCollectionCells.swift; sourceTree = "<group>"; };
-		3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourGoalVollectionViewCell.swift; sourceTree = "<group>"; };
+		3F00B6811B79393B00A9491D /* downbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downbutton.png; sourceTree = "<group>"; };
+		3F00B6831B7939F400A9491D /* up-arrow-circle-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-arrow-circle-hi.png"; sourceTree = "<group>"; };
 		3F4203ED1B46E96F00AB519D /* JodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4203F11B46E96F00AB519D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4203F21B46E96F00AB519D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F4203F51B46E96F00AB519D /* JodApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JodApp.xcdatamodel; sourceTree = "<group>"; };
 		3F4203F71B46E96F00AB519D /* ChronometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChronometerViewController.swift; path = JodApp/ChronometerViewController.swift; sourceTree = "<group>"; };
 		3F4203FA1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F4203FC1B46E96F00AB519D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F4203FF1B46E96F00AB519D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F4204051B46E96F00AB519D /* JodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F42040B1B46E96F00AB519D /* JodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodAppTests.swift; sourceTree = "<group>"; };
@@ -205,7 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				5F5FC2491B694B420097EEBB /* tutorial.png */,
+				3F00B6811B79393B00A9491D /* downbutton.png */,
 				08737D351B60163C001AB80D /* images-2.png */,
+				3F00B6831B7939F400A9491D /* up-arrow-circle-hi.png */,
 				5F96AF6F1B544CEE008F3B89 /* checked_checkbox.png */,
 				5F96AF6D1B544CE1008F3B89 /* unchecked_checkbox.png */,
 				08BE0C101B542138006BB2DC /* setaEsq.jpg */,
@@ -217,7 +219,6 @@
 		3F4203E41B46E96F00AB519D = {
 			isa = PBXGroup;
 			children = (
-				3F00B67D1B790A3D00A9491D /* HourGoalVollectionViewCell.swift */,
 				3FEA98451B70E3D2004B1475 /* Model */,
 				3FEA98461B70E3DE004B1475 /* View */,
 				3FEA98471B70E3E8004B1475 /* Controller */,
@@ -242,7 +243,6 @@
 			children = (
 				3F4203F21B46E96F00AB519D /* AppDelegate.swift */,
 				3F4203F91B46E96F00AB519D /* Main.storyboard */,
-				3F4203FC1B46E96F00AB519D /* Images.xcassets */,
 				3F4203FE1B46E96F00AB519D /* LaunchScreen.xib */,
 				3F4203F41B46E96F00AB519D /* JodApp.xcdatamodeld */,
 				3F4203F01B46E96F00AB519D /* Supporting Files */,
@@ -450,14 +450,15 @@
 			files = (
 				08BE0C121B542138006BB2DC /* setaEsq.jpg in Resources */,
 				5F96AF701B544CEE008F3B89 /* checked_checkbox.png in Resources */,
+				3F00B6821B79393B00A9491D /* downbutton.png in Resources */,
 				5F96AF6E1B544CE1008F3B89 /* unchecked_checkbox.png in Resources */,
 				5F96AF661B543568008F3B89 /* InfoPlist.strings in Resources */,
 				08737D361B60163C001AB80D /* images-2.png in Resources */,
 				5F96AF611B543568008F3B89 /* Localizable.strings in Resources */,
+				3F00B6841B7939F400A9491D /* up-arrow-circle-hi.png in Resources */,
 				3F4203FB1B46E96F00AB519D /* Main.storyboard in Resources */,
 				3F4204001B46E96F00AB519D /* LaunchScreen.xib in Resources */,
 				08BE0C111B542138006BB2DC /* setaDir.jpg in Resources */,
-				3F4203FD1B46E96F00AB519D /* Images.xcassets in Resources */,
 				5F5FC24A1B694B420097EEBB /* tutorial.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +492,6 @@
 				3F4203F31B46E96F00AB519D /* AppDelegate.swift in Sources */,
 				5F226F721B4D6BFA0063B326 /* SignInViewController.swift in Sources */,
 				08BE0C161B56D276006BB2DC /* SubjectsCollectionCells.swift in Sources */,
-				3F00B67E1B790A3D00A9491D /* HourGoalVollectionViewCell.swift in Sources */,
 				3FE332911B58099400908CBE /* GraficoCirculoViewController.swift in Sources */,
 				3F5156331B6953AD00461993 /* ButtonsCollectionView.swift in Sources */,
 				3F4203F61B46E96F00AB519D /* JodApp.xcdatamodeld in Sources */,
